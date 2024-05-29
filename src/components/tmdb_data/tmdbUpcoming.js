@@ -25,15 +25,15 @@ async function fetchMovies(page = 1) { // Updated to accept a page parameter (li
 async function displayMovies() {
   try {
     const genreMap = await fetchGenres();
-    let movies = []; // Changed from const to let to allow reassignment (line updated)
-    let page = 1; // Added to keep track of the current page (line added)
-    let data = await fetchMovies(page); // Initial fetch with page 1 (line updated)
+    let movies = [];
+    let page = 1;
+    let data = await fetchMovies(page);
     const filterDate = new Date('2024-06-01');
 
-    while (page <= data.total_pages) { // Loop through all pages (line added)
-      data = await fetchMovies(page); // Fetch movies for the current page (line added)
-      movies = movies.concat(data.results); // Concatenate new results to movies array (line updated)
-      page++; // Increment the page counter (line added)
+    while (page <= data.total_pages) {
+      data = await fetchMovies(page);
+      movies = movies.concat(data.results);
+      page++;
     }
 
     let tag = '';

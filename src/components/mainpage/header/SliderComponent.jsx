@@ -100,4 +100,5 @@ const SliderComponent = () => {
     );
 };
 
+
 export default SliderComponent;

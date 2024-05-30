@@ -12,23 +12,24 @@ img {
     object-position: calc(70%-0px) -50px;
 }
 
-.slider-container {
+.slider-container1 {
     position: absolute;
     display: flex;
     padding-left: calc(8%);
-    padding-top: 150px;
+    padding-top: 250px;
     flex-flow: column nowrap;
     font-family: "Monomaniac One", sans-serif;
     font-weight: 400;
     z-index: 2;
 }
 
-.movie_title {
+.slider-container2 {
+    position: absolute;
     display: flex;
-    font-size: 84px;
-  }
-
-.movie_contents {
-    display: flex;
-    font-size: 34px;
+    padding-left: calc(8%);
+    padding-top: 320px;
+    flex-flow: column nowrap;
+    font-family: "Monomaniac One", sans-serif;
+    font-weight: 400;
+    z-index: 2;
 }

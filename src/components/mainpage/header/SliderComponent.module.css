@@ -18,3 +18,48 @@
     width: 100%;
     height: auto;
   }
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+  
+  @keyframes erasing {
+    from { width: 100%; }
+    to { width: 0; }
+  }
+  
+  .movie_title, .movie_contents {
+    display: inline-block;
+    overflow: hidden;
+    white-space: wrap;
+    width: 500px;
+    text-align: left;
+  }
+  
+  .movie_title {
+    font-size: 36px;
+  }
+
+  @media (max-width:500px) {
+    .movie_title{
+      display: inline-block;
+      overflow: hidden;
+      white-space: wrap;
+      width: 200px;
+      text-align: left;
+    }
+    .movie_contents {
+      display: none;
+    }
+    .movie_title {
+      font-size: 28px;
+    }
+  }
+
+
+
+  
+  .hidden {
+    visibility: hidden;
+  }
+  

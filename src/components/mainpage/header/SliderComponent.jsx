@@ -4,8 +4,11 @@ import styles from './SliderComponent.module.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './custom-slick.css'
+import TmdbDataPull from "./TmdbDataPull";
 
 const SliderComponent = () => {
+    const { movies } = TmdbDataPull();
+
     const settings = {
         dots: true,
         infinite: true,
@@ -15,28 +18,23 @@ const SliderComponent = () => {
         autoplay: true,
         autoplaySpeed: 20000
     };
+
+    const firstMovie = movies.length > 0 ? movies[0] : null;
+    
     return (
         <div className={styles.sliderContainer}>
-            <h1 className="movie_title">Movie!</h1>
+            <div className="slider-container">
+                <h1 className="movie_title">Movie!</h1>
+                <p className="movie_contents">contents</p>
+            </div>
             <Slider {...settings}>
-                <div className={styles.slide}>
-                    <img src="/image/Slider_1.jpg" className="img_1"/>
-                </div>
-                <div className={styles.slide}>
-                    <h3>2</h3>
-                </div>
-                <div className={styles.slide}>
-                    <h3>3</h3>
-                </div>
-                <div className={styles.slide}>
-                    <h3>4</h3>
-                </div>
-                <div className={styles.slide}>
-                    <h3>5</h3>
-                </div>
-                <div className={styles.slide}>
-                    <h3>6</h3>
-                </div>
+                {movies.map((movie, index) => (
+                    <div key={index} className={styles.slide}>
+                        <div className={styles.slide}>
+                            <img src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`} className="img_1" />
+                        </div>
+                    </div>
+                ))}
             </Slider>
         </div>
     );

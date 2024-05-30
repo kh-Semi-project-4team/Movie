@@ -2,22 +2,33 @@
 
 .slick-slide {
     display: block;
-    height: 700px;
 }
 
 img {
     margin: 0px auto;
     object-fit: cover;
-    object-position: 0px -150px;
+    height: 800px;
+    width: 100%;
+    object-position: calc(70%-0px) -50px;
+}
+
+.slider-container {
+    position: absolute;
+    display: flex;
+    padding-left: calc(8%);
+    padding-top: 150px;
+    flex-flow: column nowrap;
+    font-family: "Monomaniac One", sans-serif;
+    font-weight: 400;
+    z-index: 2;
 }
 
 .movie_title {
-    position: absolute;
     display: flex;
     font-size: 84px;
-    z-index: 2;
-    padding-left: 100px;
-    padding-top: 100px;
-    font-family: "Monomaniac One", sans-serif;
-    font-weight: 400;
   }
+
+.movie_contents {
+    display: flex;
+    font-size: 34px;
+}

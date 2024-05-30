@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import styles from './SliderComponent.module.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import './custom-slick.css'
 
 const SliderComponent = () => {
     const settings = {
@@ -12,14 +13,14 @@ const SliderComponent = () => {
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 5000,
+        autoplaySpeed: 20000
     };
     return (
         <div className={styles.sliderContainer}>
-            <h2>Single Item</h2>
+            <h1 className="movie_title">Movie!</h1>
             <Slider {...settings}>
                 <div className={styles.slide}>
-                    <h3>1</h3>
+                    <img src="/image/Slider_1.jpg" className="img_1"/>
                 </div>
                 <div className={styles.slide}>
                     <h3>2</h3>

@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Monomaniac+One&display=swap');
+
+.slick-slide {
+    display: block;
+    height: 700px;
+}
+
+img {
+    margin: 0px auto;
+    object-fit: cover;
+    object-position: 0px -150px;
+}
+
+.movie_title {
+    position: absolute;
+    display: flex;
+    font-size: 84px;
+    z-index: 2;
+    padding-left: 100px;
+    padding-top: 100px;
+    font-family: "Monomaniac One", sans-serif;
+    font-weight: 400;
+  }

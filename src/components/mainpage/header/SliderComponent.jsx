@@ -12,7 +12,8 @@ const SliderComponent = () => {
     const [displayText, setDisplayText] = useState({ title: "", overview: "" });
     const [isVisible, setIsVisible] = useState(true);
     const typingTimeout = useRef(null);
-    const typingSpeed = 50;
+    const typingInterval = useRef(null);
+    const typingSpeed = 30;
 
     const settings = {
         dots: true,
@@ -27,6 +28,9 @@ const SliderComponent = () => {
             if (typingTimeout.current) {
                 clearTimeout(typingTimeout.current);
             }
+            if (typingInterval.current) {
+                clearInterval(typingInterval.current);
+            }
         },
         afterChange: (index) => {
             setCurrentIndex(index);
@@ -36,7 +40,7 @@ const SliderComponent = () => {
     const typeText = (text, isTitle) => {
         let display = "";
         let index = 0;
-        const interval = setInterval(() => {
+        typingInterval.current = setInterval(() => {
             display += text[index];
             if (isTitle) {
                 setDisplayText((prev) => ({ ...prev, title: display }));
@@ -45,7 +49,7 @@ const SliderComponent = () => {
             }
             index++;
             if (index === text.length) {
-                clearInterval(interval);
+                clearInterval(typingInterval.current);
                 setIsVisible(true);
             }
         }, typingSpeed);
@@ -59,10 +63,19 @@ const SliderComponent = () => {
 
             setDisplayText({ title: "", overview: "" });
 
+            if (typingTimeout.current) {
+                clearTimeout(typingTimeout.current);
+            }
+            if (typingInterval.current) {
+                clearInterval(typingInterval.current);
+            }
+
             typingTimeout.current = setTimeout(() => {
                 typeText(title, true);
-                typeText(overview, false);
-            }, 0);
+                typingTimeout.current = setTimeout(() => {
+                    typeText(overview, false);
+                }, title.length * typingSpeed);
+            }, 200);
         }
     }, [currentIndex, movies]);
 

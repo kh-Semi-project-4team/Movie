@@ -11,18 +11,20 @@ const SliderComponent = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [displayText, setDisplayText] = useState({ title: "", overview: "" });
     const [isVisible, setIsVisible] = useState(true);
+    const [isLoading, setIsLoading] = useState(true); // 로딩 상태 추가
+    const [progress, setProgress] = useState(0); // 진행 바 상태 추가
+    const sliderRef = useRef(null); // Slider에 대한 참조 추가
     const typingTimeout = useRef(null);
     const typingInterval = useRef(null);
     const typingSpeed = 30;
 
     const settings = {
-        dots: true,
         infinite: true,
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 20000,
+        autoplaySpeed: 8000,
         beforeChange: (oldIndex, newIndex) => {
             setIsVisible(false);
             if (typingTimeout.current) {
@@ -34,6 +36,7 @@ const SliderComponent = () => {
         },
         afterChange: (index) => {
             setCurrentIndex(index);
+            setProgress((index + 1) / movies.length * 100); // 진행 바 업데이트
         }
     };
 
@@ -57,6 +60,7 @@ const SliderComponent = () => {
 
     useEffect(() => {
         if (movies.length > 0) {
+            setIsLoading(false); // 데이터가 로드되면 로딩 상태를 false로 설정
             const currentMovie = movies[currentIndex];
             const title = currentMovie.title || "Movie!";
             const overview = currentMovie.overview || "contents";
@@ -79,26 +83,56 @@ const SliderComponent = () => {
         }
     }, [currentIndex, movies]);
 
+    useEffect(() => {
+        const handleVisibilityChange = () => {
+            if (document.visibilityState === 'hidden') {
+                if (sliderRef.current) {
+                    sliderRef.current.slickPause();
+                }
+            } else {
+                if (sliderRef.current) {
+                    sliderRef.current.slickPlay();
+                }
+            }
+        };
+
+        document.addEventListener('visibilitychange', handleVisibilityChange);
+
+        return () => {
+            document.removeEventListener('visibilitychange', handleVisibilityChange);
+        };
+    }, []);
+
     return (
         <div className={styles.sliderContainer}>
-            <div className="slider-container1">
-                <h1 className={`${styles.movie_title} ${isVisible ? '' : styles.hidden}`}>{displayText.title}</h1>
-            </div>
-            <div className="slider-container2">
-                <p className={`${styles.movie_contents} ${isVisible ? '' : styles.hidden}`}>{displayText.overview}</p>
-            </div>
-            <Slider {...settings}>
-                {movies.map((movie, index) => (
-                    <div key={index} className={styles.slide}>
-                        <div className={styles.slide}>
-                            <img src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`} className="img_1" />
-                        </div>
+            {isLoading ? (
+                <div className={styles.loading}>
+                    <p>Loading...</p>
+                </div>
+            ) : (
+                <>
+                    <div className="slider-container1">
+                        <h1 className={`${styles.movie_title} ${isVisible ? '' : styles.hidden}`}>{displayText.title}</h1>
                     </div>
-                ))}
-            </Slider>
+                    <div className="slider-container2">
+                        <p className={`${styles.movie_contents} ${isVisible ? '' : styles.hidden}`}>{displayText.overview}</p>
+                    </div>
+                    <Slider ref={sliderRef} {...settings}>
+                        {movies.map((movie, index) => (
+                            <div key={index} className={styles.slide}>
+                                <div className={styles.slide}>
+                                    <img src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`} className="img_1" />
+                                </div>
+                            </div>
+                        ))}
+                    </Slider>
+                    <div className={styles.progressContainer}>
+                        <div className={styles.progressBar} style={{ width: `${progress}%` }}></div>
+                    </div>
+                </>
+            )}
         </div>
     );
 };
-
 
 export default SliderComponent;

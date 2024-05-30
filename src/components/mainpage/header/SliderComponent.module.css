@@ -18,6 +18,7 @@
     width: 100%;
     height: auto;
   }
+
   @keyframes typing {
     from { width: 0; }
     to { width: 100%; }
@@ -34,11 +35,13 @@
     white-space: wrap;
     width: 500px;
     text-align: left;
+    font-weight: bold;
   }
   
   .movie_title {
     font-size: 36px;
   }
+
 
   @media (max-width:500px) {
     .movie_title{
@@ -63,3 +66,29 @@
     visibility: hidden;
   }
   
+
+  /* SliderComponent.module.css */
+
+.progressContainer {
+    position: absolute;
+    bottom: 130px;
+    left: 0;
+    width: 50%;
+    height: 10px;
+    border-radius: 10px;
+    margin-left: 8%;
+    background-color: #ddd;
+}
+
+.progressBar {
+    height: 100%;
+    border-radius: 10px;
+    background-color: red;
+    transition: width 6s ease;
+}
+
+.stop_btn {
+  display: flex;
+  width: 50px !important;
+  height: 50px !important;
+}

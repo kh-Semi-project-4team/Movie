@@ -9,7 +9,12 @@ img {
     object-fit: cover;
     height: 800px;
     width: 100%;
-    object-position: calc(70%-0px) -50px;
+}
+
+@media (min-width: 1900px) {
+    img {
+        height: 900px;
+    }
 }
 
 .slider-container1 {
@@ -21,6 +26,7 @@ img {
     font-family: "Monomaniac One", sans-serif;
     font-weight: 400;
     z-index: 2;
+    object-position: 30px 50px;
 }
 
 .slider-container2 {
@@ -32,4 +38,94 @@ img {
     font-family: "Monomaniac One", sans-serif;
     font-weight: 400;
     z-index: 2;
+}
+
+@media (max-width:600px) {
+    img {
+        margin: 0px auto;
+        object-fit: cover;
+        height: 800px;
+        width: 100%;
+        object-position: calc(70%-0px) -50px;
+    }   
+    body {
+        overflow-y: hidden;
+    }
+}
+
+
+/* custom-slick.css */
+
+/* 기본 slick 화살표 스타일 오버라이드 */
+.slick-prev, .slick-next {
+    width: 50px;
+    height: 50px;
+    z-index: 1;
+    top: auto; /* 기존 top 위치 무효화 */
+    bottom: 20px; /* 진행 바 아래로 이동 */
+    position: absolute;
+    background-size: contain; /* 이미지 크기 조정 */
+    background-repeat: no-repeat; /* 이미지 반복 방지 */
+    cursor: pointer; /* 마우스 커서를 포인터로 변경 */
+    display: none;
+}
+
+.slick-prev {
+    left: 10%; /* 왼쪽에 위치 */
+    background-image: url(./image/left.png) !important;
+}
+
+.slick-next {
+    left: 20%; /* 왼쪽에 위치 */
+    background-image: url(./image/right.png) !important;
+}
+
+.slick-prev:hover, .slick-next:hover {
+    width: 50px;
+    height: 50px;
+    z-index: 1;
+    top: auto; /* 기존 top 위치 무효화 */
+    bottom: 20px; /* 진행 바 아래로 이동 */
+    position: absolute;
+    background-size: contain; /* 이미지 크기 조정 */
+    background-repeat: no-repeat; /* 이미지 반복 방지 */
+    cursor: pointer; /* 마우스 커서를 포인터로 변경 */
+    display: none;
+}
+
+.slick-prev:hover {
+    left: 10%; /* 왼쪽에 위치 */
+    background-image: url(./image/left.png) !important;
+}
+
+.slick-next:hover {
+    left: 20%; /* 왼쪽에 위치 */
+    background-image: url(./image/right.png) !important;
+}
+
+.slick-prev:focus, .slick-next:focus {
+    width: 50px;
+    height: 50px;
+    z-index: 1;
+    top: auto; /* 기존 top 위치 무효화 */
+    bottom: 20px; /* 진행 바 아래로 이동 */
+    position: absolute;
+    background-size: contain; /* 이미지 크기 조정 */
+    background-repeat: no-repeat; /* 이미지 반복 방지 */
+    cursor: pointer; /* 마우스 커서를 포인터로 변경 */
+    display: none;
+}
+
+.slick-prev:focus {
+    left: 10%; /* 왼쪽에 위치 */
+    background-image: url(./image/left.png) !important;
+}
+
+.slick-next:focus {
+    left: 20%; /* 왼쪽에 위치 */
+    background-image: url(./image/right.png) !important;
+}
+
+.slick-prev::before, .slick-next::before {
+    display: none; /* 의사 요소의 콘텐츠를 완전히 제거 */
 }

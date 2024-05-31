@@ -1,24 +1,19 @@
-/* src/css/BestMovie.module.css */
-
 .img {
   display: block;
-  width: 300px;
   height: 400px;
   box-sizing: border-box;
+  margin: 10px;
 }
 
 .image {
-  width: 100%;
   display: flex;
-  justify-content: center; /* 수평 가운데 정렬 */
+  justify-content: center;
+  margin: 0 auto;
+  width: 80%;
 }
 
 .imageTd {
-  margin: 16px;
-}
-
-.mainposter {
-  margin: 50px; 
+  margin: 10px;
 }
 
 .title1 {
@@ -26,7 +21,10 @@
   font-size: 24px;
   border: none;
   padding: 5px;
-  margin-left: 100px;
   border-radius: 10px;
   background-color: #e6e6e6;
+}
+
+.mainposter{
+  margin: 0px 50px;
 }

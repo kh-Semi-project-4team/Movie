@@ -4,7 +4,7 @@
     display: block;
 }
 
-img {
+.img_1 {
     margin: 0px auto;
     object-fit: cover;
     height: 800px;

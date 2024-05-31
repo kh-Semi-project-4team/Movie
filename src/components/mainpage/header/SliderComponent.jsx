@@ -7,6 +7,7 @@ import './css/custom-slick.css';
 import useTmdbDataPull from "./useTmdbDataPull";
 import useTypingEffect from "./useTypingEffect";
 import useVisibilityChange from "./useVisibilityChange";
+import { useNavigate } from "react-router-dom"; // 변경된 부분
 
 const SliderComponent = () => {
     const { movies } = useTmdbDataPull(); // TMDB API로부터 영화 데이터를 가져오는 커스텀 훅
@@ -15,6 +16,7 @@ const SliderComponent = () => {
     const [isLoading, setIsLoading] = useState(true); // 로딩 상태를 저장하는 상태
     const [progress, setProgress] = useState(0); // 진행 바 상태를 저장하는 상태
     const sliderRef = useRef(null); // 슬라이더 컴포넌트에 대한 참조
+    const navigate = useNavigate(); // useHistory 대신 useNavigate 훅 사용
 
     useVisibilityChange(sliderRef); // 슬라이더의 가시성 변화 감지
 
@@ -23,6 +25,14 @@ const SliderComponent = () => {
             setIsLoading(false); // 영화 데이터가 로드되면 로딩 상태를 false로 설정
         }
     }, [movies]);
+
+    const handleWatchClick = () => {
+        const currentMovie = movies[currentIndex];
+        if (currentMovie) {
+            sessionStorage.setItem('movieId', currentMovie.id); // 세션 스토리지에 영화 ID 저장
+            navigate('/subpage'); // 서브 페이지로 이동
+        }
+    };
 
     const settings = {
         infinite: true,
@@ -71,7 +81,7 @@ const SliderComponent = () => {
                         {/* 현재 영화 개요 표시 */}
                     </div>
                     <div className="slider-container3">
-                        <a href="#" className={styles.watchBtn}>Watch</a>
+                        <button className={styles.watchBtn} onClick={handleWatchClick}>Watch</button>
                         {/* 서브 페이지 이동 */}
                     </div>
                     <Slider ref={sliderRef} {...settings}>

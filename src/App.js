@@ -1,15 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
-import SliderComponent from './components/mainpage/header/SliderComponent';
-import MainPage from './components/mainpage/contents/bestmovie';
+import React from "react";
+import { Routes, Route } from 'react-router-dom';
+import SubPage from "./components/subpage/SubPage";
+import MainPage from "./components/mainpage/MainPage";
 
 function App() {
   return (
-    <div className="App">
-      <SliderComponent />
-      <div className='page-division'></div>
-      <MainPage/>
-    </div>
+    <Routes>
+      <Route path="/" element={<MainPage />} />
+      <Route path="/subpage" element={<SubPage />} />
+  </Routes>
   );
 }
 

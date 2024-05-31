@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Monomaniac+One&display=swap');
+  
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .sliderContainer {
+    position: relative;
+    background-color: black;
+    color: white;
+  }
+  
+  .frame {
+    position: relative;
+    text-align: center;
+  }
+  
+  .image {
+    width: 100%;
+    height: auto;
+  }
+
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+  
+  @keyframes erasing {
+    from { width: 100%; }
+    to { width: 0; }
+  }
+  
+  .movie_title, .movie_contents {
+    display: inline-block;
+    overflow: hidden;
+    white-space: wrap;
+    width: 500px;
+    text-align: left;
+    font-weight: bold;
+  }
+  
+  .movie_title {
+    font-size: 36px;
+  }
+
+
+  @media (max-width:500px) {
+    .movie_title{
+      display: inline-block;
+      overflow: hidden;
+      white-space: wrap;
+      width: 200px;
+      text-align: left;
+    }
+    .movie_contents {
+      display: none;
+    }
+    .movie_title {
+      font-size: 28px;
+    }
+  }
+
+
+
+  
+  .hidden {
+    visibility: hidden;
+  }
+  
+
+  /* SliderComponent.module.css */
+
+.progressContainer {
+    position: absolute;
+    bottom: 130px;
+    left: 0;
+    width: 50%;
+    height: 10px;
+    border-radius: 10px;
+    margin-left: 8%;
+    background-color: #ddd;
+}
+
+.progressBar {
+    height: 100%;
+    border-radius: 10px;
+    background-color: red;
+    transition: width 16s ease;
+}
+
+.stop_btn {
+  display: flex;
+  width: 50px !important;
+  height: 50px !important;
+}
+
+.watchBtn {
+  display: block;
+  border: 0px;
+  width: 150px;
+  padding: 3px 0px;
+  border-radius: 20px;
+  font-size: 28px;
+  font-family: "Monomaniac One", sans-serif;
+  text-decoration: none;
+  color: black;
+  background-color: #d9d9d9;
+}

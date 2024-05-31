@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <SliderComponent />
-      <hr/>
+      <div className='page-division'></div>
       <MainPage/>
     </div>
   );

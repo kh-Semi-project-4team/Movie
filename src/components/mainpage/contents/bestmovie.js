@@ -43,14 +43,28 @@ function MainPage() {
        <td>
       {poster && (
         <a href={`https://www.themoviedb.org/movie/653346-kingdom-of-the-planet-of-the-apes`}>
-          <img src={`https://media.themoviedb.org/t/p/w220_and_h330_face/plNOSbqkSuGEK2i15A5btAXtB7t.jpg`} />
+          <img src={`https://media.themoviedb.org/t/p/original/plNOSbqkSuGEK2i15A5btAXtB7t.jpg`} />
         </a>
       )}
        </td>
        <td>
       {poster && (
         <a href={`https://www.themoviedb.org/movie/746036-the-fall-guy`}>
-          <img src={`https://media.themoviedb.org/t/p/w220_and_h330_face/aUZ176q7ldMaPLYVnmaFWK4CApE.jpg`} />
+          <img src={`https://media.themoviedb.org/t/p/original/aUZ176q7ldMaPLYVnmaFWK4CApE.jpg`} />
+        </a>
+      )}
+       </td>
+       <td>
+      {poster && (
+        <a href={`https://www.themoviedb.org/movie/746036-the-fall-guy`}>
+          <img src={`https://media.themoviedb.org/t/p/original/aUZ176q7ldMaPLYVnmaFWK4CApE.jpg`} />
+        </a>
+      )}
+       </td>
+       <td>
+      {poster && (
+        <a href={`https://www.themoviedb.org/movie/746036-the-fall-guy`}>
+          <img src={`https://media.themoviedb.org/t/p/original/aUZ176q7ldMaPLYVnmaFWK4CApE.jpg`} />
         </a>
       )}
        </td>

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Monomaniac+One&display=swap');
+  
   * {
     margin: 0;
     padding: 0;
@@ -84,11 +86,24 @@
     height: 100%;
     border-radius: 10px;
     background-color: red;
-    transition: width 6s ease;
+    transition: width 16s ease;
 }
 
 .stop_btn {
   display: flex;
   width: 50px !important;
   height: 50px !important;
+}
+
+.watchBtn {
+  display: block;
+  border: 0px;
+  width: 150px;
+  padding: 3px 0px;
+  border-radius: 20px;
+  font-size: 28px;
+  font-family: "Monomaniac One", sans-serif;
+  text-decoration: none;
+  color: black;
+  background-color: #d9d9d9;
 }

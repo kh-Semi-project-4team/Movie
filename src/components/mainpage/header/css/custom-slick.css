@@ -40,6 +40,17 @@ img {
     z-index: 2;
 }
 
+.slider-container3 {
+    position: absolute;
+    display: flex;
+    padding-left: calc(8%);
+    padding-top: 550px;
+    flex-flow: column nowrap;
+    font-family: "Monomaniac One", sans-serif;
+    font-weight: 400;
+    z-index: 2;
+}
+
 @media (max-width:600px) {
     img {
         margin: 0px auto;
@@ -72,12 +83,12 @@ img {
 
 .slick-prev {
     left: 10%; /* 왼쪽에 위치 */
-    background-image: url(./image/left.png) !important;
+    background-image: url(../image/left.png) !important;
 }
 
 .slick-next {
     left: 20%; /* 왼쪽에 위치 */
-    background-image: url(./image/right.png) !important;
+    background-image: url(../image/right.png) !important;
 }
 
 .slick-prev:hover, .slick-next:hover {
@@ -95,12 +106,12 @@ img {
 
 .slick-prev:hover {
     left: 10%; /* 왼쪽에 위치 */
-    background-image: url(./image/left.png) !important;
+    background-image: url(../image/left.png) !important;
 }
 
 .slick-next:hover {
     left: 20%; /* 왼쪽에 위치 */
-    background-image: url(./image/right.png) !important;
+    background-image: url(../image/right.png) !important;
 }
 
 .slick-prev:focus, .slick-next:focus {
@@ -118,12 +129,12 @@ img {
 
 .slick-prev:focus {
     left: 10%; /* 왼쪽에 위치 */
-    background-image: url(./image/left.png) !important;
+    background-image: url(../image/left.png) !important;
 }
 
 .slick-next:focus {
     left: 20%; /* 왼쪽에 위치 */
-    background-image: url(./image/right.png) !important;
+    background-image: url(../image/right.png) !important;
 }
 
 .slick-prev::before, .slick-next::before {

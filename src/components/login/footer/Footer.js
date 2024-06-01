@@ -1,6 +1,6 @@
 import { type } from '@testing-library/user-event/dist/type';
 import React from 'react';
-import './../css';
+// import './css/footer.css'
 import {facebook, instagram,gitihub,google} from './../icons';
 
 const Footer = () => {

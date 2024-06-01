@@ -31,7 +31,7 @@ function BestMovie() {
       <header className={styles.title1}>Best Movie!</header>
       <div className={styles.image}>
         <div className={styles.imageTd}>
-          <h3>범죄도시</h3>
+          <h3 className={styles.sub_title}>범죄도시</h3>
           {poster && (
             <a href={`https://www.themoviedb.org/movie/1017163-4`}>
               <div className={styles.bestImgContainer}>
@@ -41,7 +41,7 @@ function BestMovie() {
           )}
         </div>
         <div className={styles.imageTd}>
-          <h3>혹성탈출</h3>
+          <h3 className={styles.sub_title}>혹성탈출</h3>
           {poster && (
             <a href={`https://www.themoviedb.org/movie/653346-kingdom-of-the-planet-of-the-apes`}>
               <div className={styles.bestImgContainer}>
@@ -51,7 +51,7 @@ function BestMovie() {
           )}
         </div>
         <div className={styles.imageTd}>
-          <h3>설계자</h3>
+          <h3 className={styles.sub_title}>설계자</h3>
           {poster && (
             <a href={`https://www.themoviedb.org/movie/865910`}>
               <div className={styles.bestImgContainer}>
@@ -61,7 +61,7 @@ function BestMovie() {
           )}
         </div>
         <div className={styles.imageTd}>
-          <h3>이프,상상의 친구</h3>
+          <h3 className={styles.sub_title}>이프,상상의 친구</h3>
           {poster && (
             <a href={`https://www.themoviedb.org/movie/639720-if`}>
               <div className={styles.bestImgContainer}>
@@ -71,7 +71,7 @@ function BestMovie() {
           )}
         </div>
         <div className={styles.imageTd}>
-          <h3>챌린저스</h3>
+          <h3 className={styles.sub_title}>챌린저스</h3>
           {poster && (
             <a href={`https://www.themoviedb.org/movie/937287-challengers`}>
               <div className={styles.bestImgContainer}>

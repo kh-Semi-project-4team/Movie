@@ -55,12 +55,6 @@ const SliderComponent = () => {
     const title = currentMovie.title || currentMovie.original_title || "Movie!";
     const overview = currentMovie.overview || "Contents";
 
-    useEffect(() => {
-        console.log("Current Movie:", currentMovie);
-        console.log("Title:", title);
-        console.log("Overview:", overview);
-    }, [currentMovie, title, overview]);
-
     const displayText = useTypingEffect(title, overview, 60);
 
     return (

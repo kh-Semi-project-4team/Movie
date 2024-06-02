@@ -24,9 +24,31 @@
   object-fit: cover;
 }
 
+.bestImgContainer:hover {
+  transform: scale(1.1);
+}
+
+.rating {
+  display: flex;
+}
+
+.star {
+  width: 20px;
+  height: 20px;
+  margin: 2px;
+  background: url('/public/image/star.png') no-repeat center center;
+  background-size: contain;
+}
+
+.bestImgContainer {
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
 .sub_title {
   text-align: center;
   font-size: 1.2em;
+  margin-bottom: 30px;
 }
 
 .title1 {
@@ -37,4 +59,20 @@
   padding: 10px 2em;
   margin-bottom: 30px;
   font-size: 2em;
+}
+
+.vote_count {
+  display: flex;
+  text-decoration: none;
+  color: #DEDEDE;
+  font-weight: bold;
+  text-shadow: 0px 0px 2px black;
+}
+
+.else_container {
+  display: flex;
+  flex-flow: row nowrap;
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
 }

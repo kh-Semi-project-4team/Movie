@@ -1,0 +1,53 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: space-around; 
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
+
+.footerIcons {
+    display: flex;
+    justify-content: flex-start; 
+    margin-bottom: 20px;
+}
+
+.footerSections {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; 
+    gap: 20px; /* footer 섹션 사이 간격 */
+}
+
+.footerSection {
+    flex: 1;
+    margin-bottom: 20px; /* 섹션 사이 간격 */
+}
+
+.footerSection h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.footerSectionItems {
+    display: flex;
+    flex-direction: row;
+}
+
+.footerSectionItem {
+    margin-right: 5px;
+}
+
+.footerIcon {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.title-quick-link {
+    display: flex;
+    flex-direction: column; 
+}

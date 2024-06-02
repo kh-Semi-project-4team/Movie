@@ -1,0 +1,116 @@
+/* src/css/Navbar.module.css */
+.navbar {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    color: white;
+    width: 100%;
+    z-index: 9999;
+    background-color: #333;
+  }
+  
+  .navbarLogo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .navbarLinks {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    justify-content:space-around;
+    flex-grow: 1;
+  }
+  
+  .navbarLinks li {
+    margin: 0;
+   
+  }
+  
+  .navbarLinks a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    display: block;
+    padding: 10px;
+  }
+  
+  .navbarLinks a:hover {
+    text-decoration: underline;
+  }
+
+
+.menuButton {
+  background: none;
+  border: none;
+  border-radius: 120px;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.btnImg{
+  width: 40px;
+  height: 40px;
+  border: none;
+  background-repeat: no-repeat;
+}
+
+.menuPage {
+  position: absolute;
+  top: 150px; /* Adjust as necessary */
+  right: 50px; /* Adjust as necessary */
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  z-index: 1000;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  transform: scale(1); /* 기본 크기 */
+  width: 200px;
+  height: 400px;
+  opacity: 0;
+  pointer-events : none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menuPageOpen{
+  transform: scale(1);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.zoomed {
+  transform: scale(2); /* 확대 크기 */
+}
+
+.menuPage ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menuPage li {
+  margin: 10px 0;
+}
+
+.CloseButton {
+  position: absolute;
+  top: 30px; /* Adjust as necessary */
+  right: 30px; /* Adjust as necessary */
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.closeImg {
+  width: 20px;
+  height: 20px;
+}
+
+

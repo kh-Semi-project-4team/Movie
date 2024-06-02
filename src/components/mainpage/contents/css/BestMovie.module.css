@@ -40,6 +40,14 @@
   background-size: contain;
 }
 
+.halfStar {
+  width: 20px;
+  height: 20px;
+  margin: 2px;
+  background: url('/public/image/star-half.png') no-repeat center center;
+  background-size: contain;
+}
+
 .bestImgContainer {
   transition: transform 0.3s ease;
   position: relative;

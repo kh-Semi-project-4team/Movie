@@ -10,7 +10,10 @@ export default function SubPage() {
     return (
       <div>
         <HeaderImage movieId={movieId} />
+        <div style={{ height: "100px" }} id="best-movie"/>
         {movieData && <MovieDetails movieData={movieData} videos={videos} />}
+        <div style={{ height: "100px" }} id="best-movie"/>
+        
       </div>
     );
 }

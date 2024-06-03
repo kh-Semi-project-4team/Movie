@@ -8,7 +8,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<MainPage />} />
-      <Route path="/subpage" element={<SubPage />} />
+      <Route path="/subpage/:movieId" element={<SubPage />} />
       <Route path="/login" element={<Login />} />
   </Routes>
   );

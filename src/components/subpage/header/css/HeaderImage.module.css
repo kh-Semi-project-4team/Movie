@@ -1,25 +1,7 @@
 .headerImage {
   margin: 0px auto;
   object-fit: cover;
-  height: 800px;
+  height: 500px;
   width: 100%;
-}
-
-@media (min-width: 1900px) {
-  .headerImage {
-      height: 900px;
-  }
-}
-
-@media (max-width: 600px) {
-  .headerImage {
-      margin: 0px auto;
-      object-fit: cover;
-      height: 800px;
-      width: 100%;
-      object-position: calc(70% - 0px) -50px;
-  }   
-  body {
-      overflow-y: hidden;
-  }
+  object-position: 0px -50px;
 }

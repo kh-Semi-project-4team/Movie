@@ -46,5 +46,4 @@ function BestMovie() {
     </div>
   );
 }
-
 export default BestMovie;

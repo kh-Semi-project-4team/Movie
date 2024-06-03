@@ -1,38 +1,52 @@
-import { type } from '@testing-library/user-event/dist/type';
 import React from 'react';
-import './../css';
-import {facebook, instagram,gitihub,google} from './../icons';
+import styles from './css/Footer.module.css';
+import { facebook, instagram, github, google } from './img';
+
+const FooterSection = ({ title, items }) => (
+    <div className={styles.footerSection}>
+        <h3>{title}</h3>
+        <div className={styles.footerSectionItems}>
+            {items && items.map((item, index) => (
+                <div key={index} className={styles.footerSectionItem}>
+                    {item}
+                </div>
+            ))}
+        </div>
+    </div>
+);
 
 const Footer = () => {
     const items = [
-        {type:'icon', icon : facebook},
-        {type:'icon', icon : instagram},
-        {type:'icon', icon : gitihub},
-        {type:'icon', icon : google},
+        { type: 'section', title: 'logo' },
+        { type: 'section', title: 'Quick Link', items: ['Home', 'Login'] },
+        {
+            type: 'section', title: 'Follow Us', items: [
+                <img key="facebook" src={facebook} alt='Facebook' className={styles.footerIcon} />,
+                <img key="instagram" src={instagram} alt='Instagram' className={styles.footerIcon} />
+            ]
+        },
+        {
+            type: 'section', title: 'Information', items: [
+                <img key="github" src={github} alt='Github' className={styles.footerIcon} />,
+                <img key="google" src={google} alt='Google' className={styles.footerIcon} />
+            ]
+        }
+    ];
 
-        {type : 'section', title: 'logo'},
-        {type : 'section', title: 'Quick Link', items:[Home,Login]},
-        {type : 'section', title: 'Follow Us',
-         items: [<img src='./../icons/facebook.png' alt='img1'/>,
-         <img src='./../icons/instagram.png' alt='img2'/>]},
-        {type : 'section', title: 'Information',
-         items: [<img src='./../icons/gitihub.png' alt='img3'/>,
-         <img src='./../icons/google.png' alt='img4'/>]}
-    ]
     return (
-        <footer className="footer">
-            <div className="footer-icons">
-                {items.filter(item => item.type === 'icon').map((item, index) => {
-                    const IconComponent = item.icon;
-                    return <IconComponent key={index} className="footer-icon" />;
-                })}
+        <footer className={styles.footer}>
+            <div className={styles.footerIcons}>
+                {items.filter(item => item.type === 'icon').map((item, index) => (
+                    <img key={index} src={item.icon} alt={item.type} className={styles.footerIcon} />
+                ))}
             </div>
-            {items.filter(item => item.type === 'section').map((item, index) => (
-                <FooterSection key={index} title={item.title} items={item.items} />
-            ))}
+            <div className={styles.footerSections}>
+                {items.filter(item => item.type === 'section').map((item, index) => (
+                    <FooterSection key={index} title={item.title} items={item.items} />
+                ))}
+            </div>
         </footer>
     );
 };
-
 
 export default Footer;

@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 80%;
+}
+
+
+.details {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+}
+
+.poster {
+  width: 300px;
+  height: 450px;
+  object-fit: cover;
+  margin: 0px 10px;
+  border-radius: 20px;
+}
+
+.info {
+  width: 65%;
+  padding: 0px 20px;
+}
+
+.titleContainer {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: baseline;
+}
+
+.localTitle {
+  font-size: 30px;
+  font-weight: bold;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+.releaseYear {
+  font-size: 30px;
+  font-weight: bold;
+  margin-left: 10px;
+  color: #888;
+}
+
+.originalTitle {
+  font-size: 24px;
+  color: #888;
+  margin: 5px 0 15px 0;
+}
+
+.contents p {
+  margin: 5px 0;
+  font-size: 20px;
+}
+
+.buttons {
+  margin-top: 20px;
+}
+
+.buttons button {
+  margin-right: 10px;
+  padding: 15px 30px;
+  font-size: 1.5em;
+  background-color: white;
+  color: #888;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1)
+}
+
+.buttons button:hover {
+  background-color: #f0f0f0;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.sub_title {
+  font-family: "Monomaniac One", sans-serif;
+  display: inline-block;
+  padding: 10px 50px;
+  border-radius: 20px;
+  background-color: #E6E6E6;
+  margin-bottom: 50px;
+}
+
+@media (max-width: 445px) {
+  .poster {
+    width: 70%;
+    height: auto;
+  }
+  .titleContainer {
+    flex-flow: column nowrap;
+  }
+  .localTitle {
+    font-size: 25px;
+  }
+  .releaseYear {
+    font-size: 25px;
+  }
+  .originalTitle {
+    font-size: 20px;
+  }
+  .contents p {
+    font-size: 18px;
+  }
+}

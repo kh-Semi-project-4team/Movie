@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
 import styles from './css/Navbar.module.css';
-import btnImg from './img/btnImg.png';
-import closeImg from './img/closeImg.png';
 
 const NavBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);

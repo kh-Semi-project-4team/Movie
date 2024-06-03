@@ -151,6 +151,7 @@
 
 .navbarLinks li {
   margin: 0 auto;
+  cursor: pointer;
 }
 
 .navbarLinks a {

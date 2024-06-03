@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import styles from './css/BestMovie.module.css';
 import useTmdbDataPull from '../useTmdbDataPull';
+import { Link } from 'react-router-dom';
 
 function BestMovie() {
   const { movies } = useTmdbDataPull();
@@ -25,8 +26,12 @@ function BestMovie() {
       <div className={styles.image}>
         {movies.slice(5, 10).map(movie => (
           <div key={movie.id} className={styles.imageTd}>
-            <h3 className={styles.sub_title}>{movie.title}</h3>
-            <a href={`https://www.themoviedb.org/movie/${movie.id}`}>
+            <h3 className={styles.sub_title}>
+            <Link to={`/subpage/${movie.id}`} onClick={() => sessionStorage.setItem('movieId', movie.id)} className={styles.linkcus}>
+                {movie.title}
+                </Link>
+            </h3>
+            <Link to={`/subpage/${movie.id}`} onClick={() => sessionStorage.setItem('movieId', movie.id)} className={styles.linkcus}>
               <div className={styles.bestImgContainer}>
                 <img className={styles.img} src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt={movie.title} />
                 <div className={styles.else_container}>
@@ -34,12 +39,11 @@ function BestMovie() {
                   <div className={styles.vote_count}>{movie.vote_count} Vote!</div>
                 </div>
               </div>
-            </a>
+            </Link>
           </div>
         ))}
       </div>
     </div>
   );
 }
-
 export default BestMovie;

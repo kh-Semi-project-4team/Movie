@@ -15,15 +15,9 @@
   background-color: #333;
 }
 
-.navbarLogo {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
 .navbarLinks {
   list-style: none;
   display: flex;
-  gap: 20px;
   margin: 0;
   padding: 0;
   text-align: center;
@@ -40,83 +34,381 @@
   text-decoration: none;
   font-size: 24px;
   display: block;
-  padding: 10px; 
+  padding: 10px;
   text-shadow: 0px 0px 3px black;
 }
 
 .navbarLinks a:hover {
-  text-decoration: underline;
+  text-shadow: 0px 0px 3px red;
 }
 
 .menuButton {
-background: none;
-border: none;
-border-radius: 120px;
-cursor: pointer;
-background-color: transparent;
+  background: none;
+  border: none;
+  border-radius: 120px;
+  cursor: pointer;
+  background-color: transparent;
 }
 
 .btnImg {
-width: 40px;
-height: 40px;
-border: none;
-background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background-repeat: no-repeat;
 }
 
 .menuPage {
-position: absolute;
-top: 150px;
-right: 50px;
-background-color: #fff;
-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-padding: 20px;
-z-index: 1000;
-transition: transform 0.5s ease, opacity 0.5s ease;
-transform: scale(1);
-width: 200px;
-height: 400px;
-opacity: 0;
-pointer-events: none;
-display: flex;
-justify-content: center;
-align-items: center;
+  position: absolute;
+  top: 150px;
+  right: 50px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  z-index: 1000;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  transform: scale(1);
+  width: 200px;
+  height: 400px;
+  opacity: 0;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .menuPageOpen {
-transform: scale(1);
-opacity: 1;
-pointer-events: auto;
+  transform: scale(1);
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .zoomed {
-transform: scale(2);
+  transform: scale(2);
 }
 
 .menuPage ul {
-list-style: none;
-padding: 0;
-margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .menuPage li {
-margin: 10px 0;
+  margin: 10px 0;
 }
 
 .CloseButton {
-position: absolute;
-top: 30px;
-right: 30px;
-background: none;
-border: none;
-cursor: pointer;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 .closeImg {
-width: 20px;
-height: 20px;
+  width: 20px;
+  height: 20px;
 }
 
 .logo {
-width: 50px;
-height: auto;
+  width: 50px;
+  height: auto;
+}
+
+/* src/css/Navbar.module.css */
+.navbar {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  color: white;
+  width: 100%;
+  z-index: 9999;
+  transition: background-color 0.5s ease;
+  /* 배경색 전환을 위한 트랜지션 추가 */
+}
+
+.navbarScrolled {
+  background-color: #333;
+}
+
+.navbarLogo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbarLinks {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  justify-content: space-around;
+  flex-grow: 1;
+  align-items: center;
+}
+
+.navbarLinks li {
+  margin: 0 auto;
+}
+
+.navbarLinks a {
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  display: block;
+  padding: 10px;
+}
+
+.menuButton {
+  background: none;
+  border: none;
+  border-radius: 120px;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.btnImg {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background-repeat: no-repeat;
+}
+
+.menuPage {
+  position: absolute;
+  top: 150px;
+  right: 50px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  z-index: 1000;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  transform: scale(1);
+  width: 200px;
+  height: 400px;
+  opacity: 0;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menuPageOpen {
+  transform: scale(1);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.zoomed {
+  transform: scale(2);
+  /* 확대 크기 */
+}
+
+.menuPage ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menuPage li {
+  margin: 10px 0;
+}
+
+.CloseButton {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.closeImg {
+  width: 20px;
+  height: 20px;
+}
+
+.logo {
+  width: 50px;
+  height: auto;
+}
+
+
+/* New styles for the custom menu button */
+.custom_menu_btn {
+  position: relative;
+  margin: 0 auto;
+  width: 50px;
+  height: 50px;
+}
+
+.custom_menu_btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.07);
+  z-index: 7;
+  border-radius: 100%;
+  transition: all .3s;
+}
+
+.menu_btn_style::before {
+  width: 100vh;
+  height: 100vh;
+  background-color: #160e0b;
+  transform: scale(5);
+  border-radius: 0;
+}
+
+.custom_menu_btn button {
+  width: 50px;
+  height: 50px;
+  outline: none;
+  border: none;
+  border-radius: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  position: relative;
+  z-index: 999;
+  margin: 0;
+}
+
+.custom_menu_btn button span {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: #000000;
+  margin: 2.5px 0;
+  transition: all 0.3s;
+  border-radius: 15px;
+}
+
+.s_2 {
+  transition: all 0.1s;
+}
+
+.menu_btn_style button span {
+  background-color: #ffffff;
+}
+
+.menu_btn_style button .s_1 {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.menu_btn_style button .s_2 {
+  transform: translateX(200px);
+}
+
+.menu_btn_style button .s_3 {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  transition: 0.5s;
+  z-index: 9;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 0;
+  right: 30px;
+  font-size: 60px;
+}
+
+.overlay a {
+  padding: 0px;
+  text-decoration: none;
+  font-size: 22px;
+  color: #ffffff;
+  display: block;
+  transition: 0.3s;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  font-weight: 600;
+  opacity: 0;
+}
+
+.overlay a:hover {
+  color: #fd9c6b;
+}
+
+.overlay_content {
+  position: relative;
+  top: 30%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+  z-index: 99;
+}
+
+.menu_width {
+  width: 100%;
+}
+
+.menu_width.overlay a {
+  opacity: 1;
+}
+
+
+.btn,
+.btn:focus {
+  outline: none !important;
+  box-shadow: none;
+}
+
+.navbar_brand {
+  margin-top: 10px;
+  font-family: "Lora", serif;
+}
+
+.navbar_brand span {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.nav_gap_none {
+  display: block;
+}
+
+.mobile {
+  display: none;
+}
+
+@media (max-width: 680px) {
+  .nav_gap_none {
+    display: none;
+  }
+
+  .overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    transition: 0.5s;
+    z-index: 9;
+  }
+
+  .mobile {
+    display: block;
+    text-shadow: 0px 0px 3px black;
+  }
 }

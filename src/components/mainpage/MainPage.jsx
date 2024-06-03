@@ -8,14 +8,21 @@ export default function MainPage() {
     return (
         <div>
             <NavBar/>
-            <SliderComponent />
-            <div id="best-movie">
-            <div style={{ height: "100px" }} />
-            </div>
+            <section id="home-section">
+                <SliderComponent />
+            </section>
+            <div style={{ height: "100px" }} id="best-movie"/>
+            <section id="Best-section">
                 <BestMovie />
+            </section>
             <div style={{ height: "100px" }} />
-            <ComingSoonMovie />            
+            <section id="ComingSoon-section">
+                <ComingSoonMovie />            
+            </section>
             <div style={{ height: "100px" }} />
+            <section id="Kategorie-section">
+                {/* Kategorie 컴포넌트 */} 
+            </section>
             <Footer />
         </div>
     );

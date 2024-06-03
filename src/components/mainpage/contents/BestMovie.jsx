@@ -27,11 +27,11 @@ function BestMovie() {
         {movies.slice(5, 10).map(movie => (
           <div key={movie.id} className={styles.imageTd}>
             <h3 className={styles.sub_title}>
-            <Link to={`/subpage/${movie.id}`} onClick={() => sessionStorage.setItem('movieId', movie.id)}>
+            <Link to={`/subpage/${movie.id}`} onClick={() => sessionStorage.setItem('movieId', movie.id)} className={styles.linkcus}>
                 {movie.title}
                 </Link>
             </h3>
-            <Link to={`/subpage/${movie.id}`} onClick={() => sessionStorage.setItem('movieId', movie.id)}>
+            <Link to={`/subpage/${movie.id}`} onClick={() => sessionStorage.setItem('movieId', movie.id)} className={styles.linkcus}>
               <div className={styles.bestImgContainer}>
                 <img className={styles.img} src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt={movie.title} />
                 <div className={styles.else_container}>

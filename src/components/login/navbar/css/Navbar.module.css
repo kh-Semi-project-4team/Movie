@@ -131,7 +131,6 @@
 
 .navbarScrolled {
   background-color: #333;
-  opacity: 80%;
 }
 
 .navbarLogo {
@@ -306,7 +305,7 @@
 }
 
 .menu_btn_style button .s_2 {
-  transform: translateX(100px);
+  transform: translateX(200px);
 }
 
 .menu_btn_style button .s_3 {

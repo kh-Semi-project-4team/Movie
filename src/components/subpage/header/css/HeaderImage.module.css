@@ -3,4 +3,5 @@
   object-fit: cover;
   height: 500px;
   width: 100%;
+  object-position: 0px -50px;
 }

@@ -3,6 +3,7 @@ import HeaderImage from './header/HeaderImage';
 import MovieDetails from './contents/MovieDetails';
 import useMovieDataPullById from './useMovieDataPullById';
 import CastDetails from './contents/CastDetails';
+import Comments from './review/Review';
 
 export default function SubPage() {
   const movieId = sessionStorage.getItem('movieId') || 653346;
@@ -16,6 +17,7 @@ export default function SubPage() {
       <div style={{ height: "100px" }}/>
       {movieData && <CastDetails movieId={movieId} />}
       <div style={{ height: "100px" }}/>
+      <Comments />
     </div>
   );
 }

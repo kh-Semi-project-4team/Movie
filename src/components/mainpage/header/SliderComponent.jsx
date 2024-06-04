@@ -7,7 +7,7 @@ import './css/custom-slick.css';
 import useTmdbDataPull from "../useTmdbDataPull";
 import useTypingEffect from "./useTypingEffect";
 import useVisibilityChange from "./useVisibilityChange";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const SliderComponent = () => {
     const { popularMovies: movies, loading } = useTmdbDataPull();
@@ -29,7 +29,6 @@ const SliderComponent = () => {
         const currentMovie = movies[currentIndex];
         if (currentMovie) {
             sessionStorage.setItem('movieId', currentMovie.id);
-            navigate('/subpage');
         }
     };
 
@@ -85,7 +84,9 @@ const SliderComponent = () => {
                 <p className={`${styles.movie_contents} ${isVisible ? '' : styles.hidden}`}>{displayText.overview}</p>
             </div>
             <div className="slider-container3">
-                <button className={styles.watchBtn} onClick={handleWatchClick}>Watch</button>
+                <Link to={`/subpage/${currentMovie.id}`} onClick={handleWatchClick} className={styles.watchBtn}>
+                    Watch
+                </Link>
             </div>
             <Slider ref={sliderRef} {...settings}>
                 {movies.slice(0, 5).map((movie, index) => (

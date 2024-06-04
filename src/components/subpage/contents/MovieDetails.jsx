@@ -8,7 +8,7 @@ const MovieDetails = ({ movieData, videos }) => {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.sub_title}>Introdution</h1>
+      <h1 className={styles.sub_title}>소개</h1>
 
       <div className={styles.details}>
 

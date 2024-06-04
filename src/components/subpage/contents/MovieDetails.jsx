@@ -1,14 +1,11 @@
 import React from 'react';
 import styles from './css/MovieDetails.module.css';
 
-const MovieDetails = ({ movieData, videos }) => {
-  const handleVideoClick = (key) => {
-    window.open(`https://www.youtube.com/embed/${key}`, '_blank');
-  };
+const MovieDetails = ({ movieData, videos, onVideoClick }) => {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.sub_title}>Introdution</h1>
+      <h1 className={styles.sub_title}>Overview</h1>
 
       <div className={styles.details}>
 
@@ -37,7 +34,7 @@ const MovieDetails = ({ movieData, videos }) => {
 
           <div className={styles.buttons}>
             {videos.slice(0, 2).map((video, index) => (
-              <button key={index} onClick={() => handleVideoClick(video.key)}>
+              <button key={index} onClick={() => onVideoClick(`https://www.youtube.com/embed/${video.key}`)}> 
                 Video {index + 1}
               </button>
             ))}

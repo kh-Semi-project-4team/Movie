@@ -15,13 +15,14 @@ export default function ComingSoonMovie() {
             };
 
             try {
-                const response = await fetch('https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=ko-KR&page=1&sort_by=popularity.desc&with_release_type=2|3&release_date.gte={min_date}&release_date.lte={max_date}', options);
+                const today = new Date().toISOString().split('T')[0]; // 오늘 날짜를 YYYY-MM-DD 형식으로 가져옴
+
+                const response = await fetch(`https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=ko-KR&page=1&sort_by=popularity.desc&with_release_type=2|3&release_date.gte=${today}`, options);
                 const data = await response.json();
 
-                // 영화를 userscore에 따라 내림차순으로 정렬
-                const sortedMovies = data.results.sort((a, b) => b.vote_average - a.vote_average);
-                
-                // 상위 두 개의 영화만 선택
+                // 아직 개봉하지 않은 영화 중 상위 두 개 선택
+                const upcomingMovies = data.results.filter(movie => new Date(movie.release_date) > new Date(today));
+                const sortedMovies = upcomingMovies.sort((a, b) => b.vote_average - a.vote_average);
                 const topTwoMovies = sortedMovies.slice(0, 2);
 
                 setMovies(topTwoMovies || []);
@@ -37,21 +38,41 @@ export default function ComingSoonMovie() {
         <div className={styles.mainposter}>
             <header className={styles.section_title}>Comingsoon Movie!</header>
             <div className={styles.flex_container}>
-                {movies.map(movie => (
+
+                {movies.map((movie, index) => (
                     <div key={movie.id} className={styles.movie_container}>
-                        <div className={styles.img_box}>
-                            <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title} className={styles.img} />
-                        </div>
-                        <div className={styles.text_box}>
-                            <div className={styles.text_container}>
-                                <h3 className={styles.sub_title}>{movie.title}</h3>
-                                <p className={styles.release_date}>{movie.release_date}</p>
-                                <p className={styles.sub_content}>{movie.overview}</p>
-                                <button className={styles.Read_More_btn}>Read More</button>
-                            </div>
-                        </div>
+                        {index === 0 ? (
+                            <>
+                                <div className={styles.img_box}>
+                                    <img src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`} alt={movie.title} className={styles.img} />
+                                </div>
+                                <div className={styles.text_box}>
+                                    <div className={styles.text_container}>
+                                        <h3 className={styles.sub_title}>{movie.title}</h3>
+                                        <p className={styles.release_date}>{movie.release_date} Coming Soon! </p>
+                                        <p className={styles.sub_content}>{movie.overview}</p>
+                                        <button className={styles.Read_More_btn}>Read More</button>
+                                    </div>
+                                </div>
+                            </>
+                        ) : (
+                            <>
+                                <div className={styles.text_box}>
+                                    <div className={styles.text_container}>
+                                        <h3 className={styles.sub_title}>{movie.title}</h3>
+                                        <p className={styles.release_date}>{movie.release_date} Coming Soon! </p>
+                                        <p className={styles.sub_content}>{movie.overview}</p>
+                                        <button className={styles.Read_More_btn}>Read More</button>
+                                    </div>
+                                </div>
+                                <div className={styles.img_box}>
+                                    <img src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`} alt={movie.title} className={styles.img} />
+                                </div>
+                            </>
+                        )}
                     </div>
                 ))}
+
             </div>
         </div>
     );

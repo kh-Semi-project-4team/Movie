@@ -1,57 +1,61 @@
 import React, { useState } from 'react';
-import './../css/loginapp.css';  // 스타일은 별도의 CSS 파일로 관리합니다.
+import axios from 'axios';
+import { useDispatch } from "react-redux";
+import { useNavigate } from 'react-router-dom';
+import './css/Login.module.css'; // CSS 파일 임포트
+import { saveToken } from './store/MemberSlice';
 
-const App = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
+const LoginApp = () => {
+  const [id, setId] = useState('');
+  const [password, setPassword] = useState('');
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const response = await axios.post('http://nam3324.synology.me:32845/member/login', { id : id, pwd : password });
+      if (response.status === 200) {
+        if(response.data.flag)
+          alert('로그인 성공');
+        else
+          alert('로그인 실패');
+        console.log('tokken 정보 : ',response.data.token);
+        dispatch(saveToken(response.data));
+        navigate('/main');
+      }
+    } catch (error) {
+      alert('로그인 실패');
+      console.error(error);
+    }
   };
 
   return (
-    <div className={`container ${menuOpen ? 'menu-open' : ''}`}>
-      <span className="menu-trigger" onClick={toggleMenu}>
-        <i className="menu-trigger-bar top"></i>
-        <i className="menu-trigger-bar middle"></i>
-        <i className="menu-trigger-bar bottom"></i>
-      </span>
-      <span className="close-trigger" onClick={toggleMenu}>
-        <i className="close-trigger-bar left"></i>
-        <i className="close-trigger-bar right"></i>
-      </span>
-      <span className="logo">
-        <span>
-          ⬢
-          <i className="logo-title">UI</i>
-          <i className="logo-badge">6</i>
-        </span>
-      </span>
-      <div className="inner-container">
-        <i className="menu-bg top"></i>
-        <i className="menu-bg middle"></i>
-        <i className="menu-bg bottom"></i>
-        <div className="menu-container">
-          <ul className="menu">
-            <li><a href="#">Login</a></li>
-            <li><a href="#">Create account</a></li>
-            <li><a href="#">Support</a></li>
-            <li><a href="#">About</a></li>
-          </ul>
-        </div>
-      </div>
-      <div id='links'>
-        <a id='twitter' href="https://twitter.com/karlovidek" target="_blank" rel="noopener noreferrer">
-          <span className='fa fa-twitter'></span>
-        </a>
-        <div id='pens'>
-          <a href="https://codepen.io/karlovidek/" target="_blank" rel="noopener noreferrer">
-            <span className='fa fa-codepen'></span>
-          </a>
-          my other Pens
-        </div>
-      </div>
+    <div className="login-container">
+      <h2 className="login-title">로그인 페이지</h2>
+      <form onSubmit={handleSubmit} className="login-form">
+        <input
+          type="text"
+          placeholder="아이디"
+          value={id}
+          onChange={(e) => setId(e.target.value)}
+          required
+          className="login-input"
+        />
+        <br />
+        <input
+          type="password"
+          placeholder="암호"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+          className="login-input"
+        />
+        <br />
+        <button type="submit" className="login-button">로그인</button>
+      </form>
     </div>
   );
 };
 
-export default App;
+export default LoginApp;

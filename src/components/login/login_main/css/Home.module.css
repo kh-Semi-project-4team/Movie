@@ -1,0 +1,40 @@
+/* 기본 스타일 */
+.homeContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    position: absolute;
+    height: 100vh;
+    top: 50px;
+    left: 50px;
+    z-index: 10;
+    
+  }
+
+
+  .homeLinks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .home-link {
+    display: block;
+    padding: 10px 20px;
+    margin: 10px 0;
+    color: black;
+    text-align: center;
+    width: 100px;
+  }
+  
+
+  
+  .socialLogin {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 수직 가운데 정렬 */ 
+  }

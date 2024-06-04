@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.kategorieImg {
+  width: 10%;
+}
+
+.genreButtons {
+  display: flex;
+  justify-content: center; 
+}
+
+.genreButtons button {
+  padding: 10px 20px; 
+  background-color: transparent;
+  border: none; 
+  cursor: pointer;
+  font-size: 36px;
+  font-weight: bold;
+  margin: 70px;
+  margin-top: 50px;
+}
+

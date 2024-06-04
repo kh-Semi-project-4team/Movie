@@ -2,6 +2,7 @@ import Footer from "./../login/footer/Footer";
 import NavBar from "./../login/navbar/NavBar";
 import BestMovie from "./contents/BestMovie";
 import ComingSoonMovie from "./contents/ComingSoonMovie";
+import KategorieMovie from "./contents/KategorieMovie";
 import SliderComponent from "./header/SliderComponent";
 
 export default function MainPage() {
@@ -21,7 +22,7 @@ export default function MainPage() {
             </section>
             <div style={{ height: "100px" }} />
             <section id="Kategorie-section">
-                {/* Kategorie 컴포넌트 */} 
+                <KategorieMovie/> 
             </section>
             <Footer />
         </div>

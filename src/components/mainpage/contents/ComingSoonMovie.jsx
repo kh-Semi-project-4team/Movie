@@ -77,7 +77,6 @@ export default function ComingSoonMovie() {
                         )}
                     </div>
                 ))}
-
             </div>
         </div>
     );

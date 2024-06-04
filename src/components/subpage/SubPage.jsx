@@ -5,6 +5,9 @@ import useMovieDataPullById from './useMovieDataPullById';
 import CastDetails from './contents/CastDetails';
 import DisqusComments from './review/DisqusComment';
 import VideoViewer from './contents/VideoPopupViewer';
+import SubNavBar from './subnavbar/SubpageNavBar';
+
+
 
 export default function SubPage() {
   const movieId = sessionStorage.getItem('movieId') || 653346;
@@ -24,6 +27,7 @@ export default function SubPage() {
 
   return (
     <div>
+      <SubNavBar/>
       <HeaderImage movieId={movieId} />
       <div style={{ height: "100px" }}/>
       {movieData && <MovieDetails movieData={movieData} videos={videos} onVideoClick={handleVideoClick} />}

@@ -29,7 +29,7 @@
   text-align: center;
   position: relative;
   z-index: 1001; /* overlay에 비해 z축으로 +1 */
-  animation: modal-show 0.3s; /* 모달 효과ㅑ */
+  animation: modal-show 0.3s; /* 모달 효과 */
 }
 
 .closeButton {

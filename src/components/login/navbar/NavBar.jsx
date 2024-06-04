@@ -26,7 +26,7 @@ const NavBar = () => {
 
   const handleScroll = () => {
     const sections = document.querySelectorAll('section');
-    const scrollPosition = window.scrollY + 200; // Adjust based on your navbar height
+    const scrollPosition = window.scrollY + 200;
 
     sections.forEach(section => {
       const sectionTop = section.offsetTop;

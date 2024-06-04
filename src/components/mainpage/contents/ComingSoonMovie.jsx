@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import styles from './css/ComingSoonMovie.module.css';
+import { Link } from 'react-router-dom';
 
 export default function ComingSoonMovie() {
     const [movies, setMovies] = useState([]);
@@ -51,7 +52,9 @@ export default function ComingSoonMovie() {
                                         <h3 className={styles.sub_title}>{movie.title}</h3>
                                         <p className={styles.release_date}>{movie.release_date} Coming Soon! </p>
                                         <p className={styles.sub_content}>{movie.overview}</p>
-                                        <button className={styles.Read_More_btn}>Read More</button>
+                                        <Link to={`/subpage/${movie.id}`} onClick={() => sessionStorage.setItem('movieId', movie.id)}
+                                         className={styles.Read_More_btn}>
+                                           Read More </Link>
                                     </div>
                                 </div>
                             </>
@@ -62,7 +65,9 @@ export default function ComingSoonMovie() {
                                         <h3 className={styles.sub_title}>{movie.title}</h3>
                                         <p className={styles.release_date}>{movie.release_date} Coming Soon! </p>
                                         <p className={styles.sub_content}>{movie.overview}</p>
-                                        <button className={styles.Read_More_btn}>Read More</button>
+                                        <Link to={`/subpage/${movie.id}`} onClick={() => sessionStorage.setItem('movieId', movie.id)}
+                                         className={`${styles.Read_More_btn}`}>
+                                           Read More </Link>
                                     </div>
                                 </div>
                                 <div className={styles.img_box}>

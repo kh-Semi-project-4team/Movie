@@ -83,9 +83,15 @@
     font-family: "Monomaniac One", sans-serif;
     background-color: white;
     width: 50%;
+    display: block;
+    border: 1px solid black;
     border-radius: 10px;
     font-size: 20px;
     padding: 5px 10px;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    margin-top: 20px;
 }
 
 .Read_More_btn:hover {

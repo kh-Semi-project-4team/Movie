@@ -1,0 +1,100 @@
+.container {
+  width: 80%;
+  margin: 0px auto;
+}
+
+.section_title {
+  font-family: "Gamja Flower", sans-serif;
+  display: inline-block;
+  border-radius: 30px;
+  background-color: #E6E6E6;
+  padding: 10px 2em;
+  margin-bottom: 30px;
+  font-size: 2em;
+}
+
+.genreButtons {
+  display: flex;
+  flex-flow: row nowrap;
+  margin-bottom: 30px;
+}
+
+.genreButtons button {
+  font-family: "Gamja Flower", sans-serif;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+@media (max-width:600px) {
+  .genreButtons button {
+    font-size: 24px;
+  }
+}
+@media (max-width:350px) {
+  .genreButtons button {
+    font-size: 20px;
+  }
+}
+
+.btn_genre {
+  width: 25%;
+}
+
+.genreButtons button:hover {
+  transform: scale(1.2);
+}
+
+.category > ul {
+  display: flex;
+  flex-flow: row wrap;
+  list-style: none;
+  padding: 0;
+  justify-content: center;
+}
+
+.category li {
+  text-align: center;
+  width: 280px;
+  justify-content: flex-end;
+}
+
+.kategorieImg {
+  width: 90%; 
+  transition: transform 0.3s ease;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.sub_title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.kategorieContainer {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.kategorieContainer {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.kategorieTitle {
+  font-family: "Gamja Flower", sans-serif;
+  font-weight: normal;
+  color: black;
+  display: block;
+  text-decoration: none;
+  font-size: 1.2em;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.kategorieImg:hover {
+  transform: scale(1.1);
+}

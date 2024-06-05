@@ -8,10 +8,10 @@ const CastDetails = ({ movieId }) => {
 
   return (
     <div className={styles.castDetailsContainer}>
+      
       <h1 className={styles.sub_title}>출연진</h1>
 
       <div className={styles.castList}>
-
         {castDetails.map(member => (
           <div key={member.id} className={styles.castMember}>
             {member.profile_path && (
@@ -23,7 +23,6 @@ const CastDetails = ({ movieId }) => {
             </div>
           </div>
         ))}
-
       </div>
     </div>
   );

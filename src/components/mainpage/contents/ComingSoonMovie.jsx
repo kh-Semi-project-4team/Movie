@@ -37,7 +37,7 @@ export default function ComingSoonMovie() {
 
     return (
         <div className={styles.mainposter}>
-            <header className={styles.section_title}>Comingsoon Movie!</header>
+            <header className={styles.section_title}>개봉예정</header>
             <div className={styles.flex_container}>
 
                 {movies.map((movie, index) => (

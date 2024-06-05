@@ -30,7 +30,7 @@ function BestMovie() {
 
   return (
     <div className={styles.mainposter}>
-      <header className={styles.title1}>Best Movie!</header>
+      <header className={styles.title1}>인기영화</header>
       <div className={styles.image}>
         {popularMovies.slice(5, 10).map(movie => (
           <div key={movie.id} className={styles.imageTd}>

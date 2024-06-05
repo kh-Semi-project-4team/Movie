@@ -24,6 +24,7 @@ export default function MainPage() {
             <section id="Kategorie-section">
                 <KategorieMovie/> 
             </section>
+            <div style={{ height: "100px" }} />
             <Footer />
         </div>
     );

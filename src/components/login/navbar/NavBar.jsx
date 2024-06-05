@@ -70,7 +70,7 @@ const NavBar = () => {
             duration={500}
             className={({ isActive }) => (activeSection === 'home-section' ? styles.active : '')}
           >
-            Home
+            메인
           </ScrollLink>
         </li>
         <li className={styles.nav_gap_none}>
@@ -80,7 +80,7 @@ const NavBar = () => {
             duration={500}
             className={({ isActive }) => (activeSection === 'Best-section' ? styles.active : '')}
           >
-            Best
+            인기영화
           </ScrollLink>
         </li>
         <li className={styles.nav_gap_none}>
@@ -90,7 +90,7 @@ const NavBar = () => {
             duration={500}
             className={({ isActive }) => (activeSection === 'ComingSoon-section' ? styles.active : '')}
           >
-            ComingSoon
+            개봉예정영화
           </ScrollLink>
         </li>
         <li className={styles.nav_gap_none}>
@@ -100,8 +100,7 @@ const NavBar = () => {
             duration={500}
             className={({ isActive }) => (activeSection === 'Kategorie-section' ? styles.active : '')}
           >
-            Kategorie
-          </ScrollLink>
+            장르별영화          </ScrollLink>
         </li>
         <li className={styles.nav_gap_none}>
           <div className={styles.custom_menu_btn}>

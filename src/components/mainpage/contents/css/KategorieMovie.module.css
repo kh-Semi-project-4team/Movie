@@ -65,7 +65,7 @@
   width: 90%; 
   transition: transform 0.3s ease;
   border-radius: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .sub_title {
@@ -85,6 +85,7 @@
 }
 
 .kategorieTitle {
+  font-family: "Gamja Flower", sans-serif;
   font-weight: normal;
   color: black;
   display: block;

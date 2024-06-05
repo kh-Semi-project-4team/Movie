@@ -359,6 +359,7 @@
 }
 
 .menu_width {
+  overflow-y: hidden;
   width: 100%;
 }
 

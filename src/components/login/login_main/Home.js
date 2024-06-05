@@ -4,6 +4,7 @@ import NaverLoginButton from './../button/NaverLoginButton';
 import KakaoLoginButton from './../button/KakaoLoginButton';
 import styles from './css/Home.module.css';
 
+
 const Home = () => {
     return (
         <div className={styles.homeContainer}>
@@ -15,6 +16,7 @@ const Home = () => {
             <div className={styles.socialLogin}>
                 <NaverLoginButton />
                 <KakaoLoginButton />
+        
             </div>
         </div>
     );

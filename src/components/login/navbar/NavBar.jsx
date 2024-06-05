@@ -1,9 +1,9 @@
-
 import React, { useState, useEffect } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
-import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
-import styles from './css/Navbar.module.css';
-import SearchBox from '../searchbox/SearchBox';
+import { Link as ScrollLink } from 'react-scroll';
+import styles from './css/Navbar.module.css'; // Adjust module file path as per your project structure
+import SearchBox from './../searchbox/SearchBox'; // Adjust path if needed
+import profile from "./img/profile.png"; // Import profile image
 
 const NavBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -11,11 +11,23 @@ const NavBar = () => {
   const [navBackground, setNavBackground] = useState(false);
   const [activeSection, setActiveSection] = useState('');
   const navigate = useNavigate();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userInfo, setUserInfo] = useState({});
 
-  const openNav = () => {
-    document.getElementById("myNav").classList.toggle(styles.menu_width);
-    document.querySelector(`.${styles.custom_menu_btn}`).classList.toggle(styles.menu_btn_style);
-  };
+  useEffect(() => {
+    const storedUserLoggedInInformation = localStorage.getItem("isLoggedIn");
+    setIsLoggedIn(storedUserLoggedInInformation === "1");
+
+    // Mock user information for demonstration
+    if (storedUserLoggedInInformation === "1") {
+      setUserInfo({
+        name: "John Doe", // Replace with actual user name
+        profileImage: profile // Replace with actual profile image URL
+      });
+    } else {
+      setUserInfo({});
+    }
+  }, []);
 
   const handleMenuClose = () => {
     setMenuOpen(false);
@@ -57,6 +69,17 @@ const NavBar = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem("isLoggedIn");
+    setIsLoggedIn(false);
+    setUserInfo({});
+  };
+
+  const openNav = () => {
+    document.getElementById("myNav").classList.toggle(styles.menu_width);
+    document.querySelector(`.${styles.custom_menu_btn}`).classList.toggle(styles.menu_btn_style);
+  };
 
   return (
     <nav className={`${styles.navbar} ${navBackground ? styles.navbarScrolled : ''}`}>
@@ -114,14 +137,31 @@ const NavBar = () => {
             <div id="myNav" className={styles.overlay}>
               <div className={styles.overlay_content}>
                 <NavLink to="/">Home</NavLink>
-                <NavLink to="/login">Login</NavLink>
-                <SearchBox/>
+                {isLoggedIn ? (
+                  <>
+                    <img src={userInfo.profileImage} alt="Profile" style={{ width: 50, height: 50 }} />
+                    <p>{userInfo.name}</p>
+                    <button onClick={handleLogout}>로그아웃</button>
+                  </>
+                ) : (
+                  <>
+                    <NavLink to="/login">로그인</NavLink>
+                    <SearchBox/>
+                  </>
+                )}
               </div>
             </div>
           </div>
         </li>
         <li className={styles.mobile}>
-          ---님{/* session에 로그인정보가 있으면 표시 없으면 로그인 창으로 이동*/}
+          {isLoggedIn ? (
+            <>
+              <img src={userInfo.profileImage} alt="Profile" style={{ width: 50, height: 50 }} />
+              <p>네이버 클라우드</p>
+            </>
+          ) : (
+            <p>로그인이 필요합니다</p>
+          )}
         </li>
       </ul>
     </nav>

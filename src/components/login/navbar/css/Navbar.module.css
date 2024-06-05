@@ -160,6 +160,7 @@
   font-size: 24px;
   display: block;
   padding: 10px;
+  font-family: "Gamja Flower", sans-serif;
 }
 
 .menuButton {
@@ -358,6 +359,7 @@
 }
 
 .menu_width {
+  overflow-y: hidden;
   width: 100%;
 }
 

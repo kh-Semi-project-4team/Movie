@@ -8,6 +8,10 @@ const CastDetails = ({ movieId }) => {
 
   return (
     <div className={styles.castDetailsContainer}>
+      <h1 className={styles.sub_title}>출연진</h1>
+
+      <div className={styles.castList}>
+
       <h2>출연진</h2>
       <div className={styles.castList}>
         {castDetails.map(member => (

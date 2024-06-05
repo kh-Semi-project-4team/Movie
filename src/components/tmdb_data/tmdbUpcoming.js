@@ -66,3 +66,4 @@ async function displayMovies() {
 window.onload = () => {
   displayMovies();
 }
+

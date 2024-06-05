@@ -7,7 +7,7 @@
 }
 
 .section_title {
-    font-family: "Monomaniac One", sans-serif;
+    font-family: "Gamja Flower", sans-serif;
     display: inline-block;
     border-radius: 30px;
     background-color: #E6E6E6;
@@ -18,7 +18,7 @@
 
 /* ComingSoon 고유 css */
 
-.flex_container {
+.movie_container {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
@@ -26,7 +26,7 @@
 
 .img_box {
     display: flex;
-    width: 42%;
+    width: 48%;
     height: auto;
     justify-content: center;
     margin-bottom: 50px;
@@ -83,15 +83,32 @@
     font-family: "Monomaniac One", sans-serif;
     background-color: white;
     width: 50%;
+    display: block;
+    border: 1px solid black;
     border-radius: 10px;
     font-size: 20px;
     padding: 5px 10px;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    margin-top: 20px;
 }
 
 .Read_More_btn:hover {
     box-shadow: 0px 0px 5px black;
 }
 
+.sub_content {
+    font-size: 16px;
+}
+
+.sub_title {
+    font-size: 24px;
+}
+
+.release_date {
+    font-size: 24px;
+}
 
 /* 1080 이하의 해상도에서는 중앙정렬로 처리 */
 @media (max-width : 1080px) {

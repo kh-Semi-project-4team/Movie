@@ -14,7 +14,7 @@ function App() {
     <Provider store={store}>
       <Routes>
         <Route path="/" element={<MainPage />} />
-        <Route path="/subpage" element={<SubPage />} />
+        <Route path="/subpage/:movieId" element={<SubPage />}  />
         <Route path="/login" element={<LoginMain />} />
         <Route path="/login/LoginApp" element={<LoginApp />} />
         <Route path="/login/Register" element={<Register />} /> 

@@ -3,9 +3,10 @@
 .homeContainer {
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Center vertically */
+  justify-content: center;
   align-items: center;
-  height: 100vh; /* Set the height to fill the entire viewport */
+  height: 100%;
+  margin-top: 100px;
 }
 
 .homeLinks {

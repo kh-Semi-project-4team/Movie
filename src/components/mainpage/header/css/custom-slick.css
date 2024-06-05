@@ -7,23 +7,9 @@
 .img_1 {
     margin: 0px auto;
     object-fit: cover;
-    height: 900px;
+    height: 100vh;
     width: 100%;
 }
-
-@media (min-width: 1900px) {
-    .img_1 {
-        height: 955px;
-        object-position: 0px -0px;
-    }
-}
-
-@media (min-width : 2560px) {
-    .img_1 {
-        height: 1200px;
-        object-position: 0px -0px;
-    }
-  }
 
 .slider-container1 {
     position: absolute;

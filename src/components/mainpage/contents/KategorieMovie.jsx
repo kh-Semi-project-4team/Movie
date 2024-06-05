@@ -54,15 +54,15 @@ export default function KategorieMovie() {
       <div className={styles.category}> 
         <ul>
           {filteredMovies.map(movie => (
-            <li key={movie.id} className={styles.kategorieContainer}>
-              <Link to={`/subpage/${movie.id}`}>
-                <img className={styles.kategorieImg} src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt={movie.title} />
-              </Link>
+            <li key={movie.id} className={styles.kategorieImgContainer}>
               <li className={styles.sub_title}>
                 <Link to={`/subpage/${movie.id}`} onClick={() => sessionStorage.setItem('movieId', movie.id)} className={styles.kategorieTitle}>
-                {movie.title}
-              </Link>
-              </li>
+                 {movie.title}
+                </Link>
+              </li>      
+                <Link to={`/subpage/${movie.id}`}>
+                  <img className={styles.kategorieImg} src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt={movie.title} />
+                </Link>
             </li>
           ))}
           

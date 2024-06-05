@@ -5,3 +5,10 @@
   width: 100%;
   object-position: 0px -50px;
 }
+
+@media (min-width: 1440px) {
+  .headerImage {
+  height: 700px;
+  object-position: 0px -50px;
+  }
+}

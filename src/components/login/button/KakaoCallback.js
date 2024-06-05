@@ -1,31 +1,27 @@
 import React, { useEffect } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
 
-const Callback = () => {
-    const navigate = useNavigate();
-    const location = useLocation();
-
+const KakaoLogin = () => {
     useEffect(() => {
-        const searchParams = new URLSearchParams(location.search);
-        const code = searchParams.get('code');
-
-        if (code) {
-            window.Kakao.Auth.login({
-                success: function(authObj) {
-                    console.log('로그인 성공', authObj);
-                    // 여기서 서버로 사용자 정보를 보내어 인증 처리
-                    navigate('/');
-                },
-                fail: function(err) {
-                    console.error('로그인 실패', err);
-                },
-            });
-        } else {
-            console.error('Authorization code not found');
+        // Kakao SDK 초기화
+        if (!window.Kakao.isInitialized()) {
+            window.Kakao.init('85ff9e31128e06e7bbbd2b1bf75bc234'); // Replace with your Kakao REST API key
         }
-    }, [navigate, location]);
+    }, []);
 
-    return <div>로그인 처리 중...</div>;
+    const handleKakaoLogin = () => {
+        window.Kakao.Auth.authorize({
+            redirectUri: 'http://localhost:3000/oauth' // Replace with your redirect URI
+        });
+    };
+
+    return (
+        <div>
+            <h1>Login Page</h1>
+            <button onClick={handleKakaoLogin}>
+                <img src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png" alt="카카오 로그인" />
+            </button>
+        </div>
+    );
 };
 
-export default Callback;
+export default KakaoLogin;

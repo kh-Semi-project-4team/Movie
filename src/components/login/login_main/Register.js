@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import './css/register.css'; // CSS 파일 임포트
+import styles from './css/Register.module.css'; // Import CSS module styles
 
 const Register = () => {
   const [id, setId] = useState('');
@@ -34,16 +34,16 @@ const Register = () => {
   };
 
   return (
-    <div className="register-container">
-      <h2 className="register-title">Register</h2>
-      <form onSubmit={handleSubmit} className="register-form">
+    <div className={styles.joinForm}>
+      <h2>Register</h2>
+      <form onSubmit={handleSubmit} className={styles.joinForm}>
         <input
           type="text"
           placeholder="아이디"
           value={id}
           onChange={(e) => setId(e.target.value)}
           required
-          className="register-input"
+          className={styles.id}
         />
         <br/>
         <input
@@ -52,7 +52,7 @@ const Register = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
-          className="register-input"
+          className={styles.pw}
         />
         <br />
         <input
@@ -61,7 +61,7 @@ const Register = () => {
           value={userName}
           onChange={(e) => setUserName(e.target.value)}
           required
-          className="register-input"
+          className={styles.name}
         />
         <br />
         <input
@@ -70,7 +70,7 @@ const Register = () => {
           value={userNick}
           onChange={(e) => setUserNick(e.target.value)}
           required
-          className="register-input"
+          className={styles.nickname}
         />
         <br />
         <input
@@ -79,7 +79,7 @@ const Register = () => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-          className="register-input"
+          className={styles.email}
         />
         <br />    
         <input
@@ -88,14 +88,14 @@ const Register = () => {
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
           required
-          className="register-input"
+          className={styles.cellphoneNo}
         />
         <br />    
         <select
           value={gender}
           onChange={(e) => setGender(e.target.value)}
           required
-          className="register-input"
+          className={styles.gender}
         >
           <option value="" disabled>
             성별 선택
@@ -104,7 +104,7 @@ const Register = () => {
           <option value="F">여자</option>
         </select>
         <br />
-        <button type="submit" className="register-button">
+        <button type="submit" className={styles.btn}>
           사용자 등록하기
         </button>
       </form>
@@ -113,4 +113,3 @@ const Register = () => {
 };
 
 export default Register;
-

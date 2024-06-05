@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useDispatch } from "react-redux";
 import { useNavigate } from 'react-router-dom';
-import './css/Login.module.css'; // CSS 파일 임포트
+import styles from './css/LoginApp.module.css'; // Import CSS module styles
 import { saveToken } from './store/MemberSlice';
 
 const LoginApp = () => {
@@ -31,28 +31,28 @@ const LoginApp = () => {
   };
 
   return (
-    <div className="login-container">
-      <h2 className="login-title">로그인 페이지</h2>
-      <form onSubmit={handleSubmit} className="login-form">
-        <input
-          type="text"
-          placeholder="아이디"
-          value={id}
-          onChange={(e) => setId(e.target.value)}
-          required
-          className="login-input"
-        />
-        <br />
-        <input
-          type="password"
-          placeholder="암호"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-          className="login-input"
-        />
-        <br />
-        <button type="submit" className="login-button">로그인</button>
+    <div className={styles["login-box"]}> {/* Apply CSS module class */}
+      <h2>로그인 페이지</h2>
+      <form onSubmit={handleSubmit}>
+        <div className={styles["user-box"]}>
+          <input
+            type="text"
+            value={id}
+            onChange={(e) => setId(e.target.value)}
+            required
+          />
+          <label>아이디</label>
+        </div>
+        <div className={styles["user-box"]}>
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+          <label>암호</label>
+        </div>
+        <button type="submit">로그인</button>
       </form>
     </div>
   );

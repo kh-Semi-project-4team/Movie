@@ -1,0 +1,28 @@
+/* Add this to your CSS file */
+#naverIdLogin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    max-width: 400px; /* Set maximum width */
+    margin: 0 auto; /* Center horizontally */
+    padding: 0 20px; /* Add some padding */
+    box-sizing: border-box; /* Ensure padding doesn't affect max width */
+}
+
+#naverIdLogin > iframe {
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+.naver-login-container {
+    height: 30px !important;
+}
+
+.naver-login-container img {
+    max-width: 100%; /* Ensure the image doesn't exceed its container's width */
+    max-height: 100px; /* Set the maximum height of the image */
+    width: auto; /* Ensure the image width adjusts according to its height */
+    height: auto; /* Ensure the image height adjusts according to its width */
+}

@@ -1,0 +1,105 @@
+.searchContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.searchBox {
+  background: #160e0b;
+  color: white;
+  height: 40px;
+  border-radius: 40px;
+  padding: 10px;
+  z-index: 100;
+  display: inline-block;
+  position: relative;
+}
+
+.searchBox:hover .searchTxt {
+  width: 240px;
+  padding: 0 6px;
+}
+
+.searchBox:hover .searchBtn {
+  background: #ffffff;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.searchBtn {
+  float: right;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #160e0b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.searchBtn i {
+  color: #e84118;
+  padding-top: 10px;
+}
+
+.searchTxt {
+  border: none;
+  background: none;
+  outline: none;
+  float: left;
+  padding-left: 0;
+  color: #ffffff;
+  font-size: 16px;
+  transition: 0.4s;
+  line-height: 40px;
+  width: 0px;
+}
+
+.searchTxt::placeholder {
+  color: white;
+}
+
+/* New CSS for results list */
+.resultsList {
+  list-style: none;
+  padding: 0;
+  margin: 20px auto 0;
+  display: inline-block;
+  text-align: left;
+}
+
+.resultItem {
+  display: flex;
+  align-items: flex-start;
+  padding: 10px;
+}
+
+.posterContainer {
+  flex-shrink: 0;
+  margin-right: 10px;
+}
+
+.poster {
+  width: 50px;
+  height: auto;
+}
+
+.movieDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+.overview {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}

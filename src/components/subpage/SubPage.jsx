@@ -7,8 +7,6 @@ import DisqusComments from './review/DisqusComment';
 import VideoViewer from './contents/VideoPopupViewer';
 import SubNavBar from './subnavbar/SubpageNavBar';
 
-
-
 export default function SubPage() {
   const movieId = sessionStorage.getItem('movieId') || 653346;
   const { movieData, videos } = useMovieDataPullById(movieId);
@@ -27,13 +25,13 @@ export default function SubPage() {
 
   return (
     <div>
-      <SubNavBar/>
+      <SubNavBar />
       <HeaderImage movieId={movieId} />
-      <div style={{ height: "100px" }}/>
+      <div style={{ height: "100px" }} />
       {movieData && <MovieDetails movieData={movieData} videos={videos} onVideoClick={handleVideoClick} />}
-      <div style={{ height: "100px" }}/>
+      <div style={{ height: "100px" }} />
       {movieData && <CastDetails movieId={movieId} />}
-      <div style={{ height: "100px" }}/>
+      <div style={{ height: "100px" }} />
       <DisqusComments url={pageUrl} identifier={pageIdentifier} />
       <VideoViewer videoUrl={videoUrl} onClose={handleCloseVideo} />
     </div>

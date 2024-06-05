@@ -1,7 +1,6 @@
 //store.js
 import {configureStore} from '@reduxjs/toolkit';
 import MemberSlice from './MemberSlice';
-
 import storage from 'redux-persist/lib/storage';
 import { persistReducer, persistStore } from 'redux-persist';
 

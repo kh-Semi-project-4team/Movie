@@ -21,9 +21,11 @@
 .homeLink:hover{
   text-decoration-color: red;
   color: black;
+  text-shadow: 0px 0px 1px black;
 }
 
 .homeLink{
+  color: black;
   margin-bottom: 30px;
 }
 

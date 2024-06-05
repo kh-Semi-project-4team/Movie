@@ -1,0 +1,45 @@
+/* Home.module.css */
+
+.homeContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center vertically */
+  align-items: center;
+  height: 100vh; /* Set the height to fill the entire viewport */
+}
+
+.homeLinks {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  text-decoration: none;
+}
+
+.homeLink:hover{
+  text-decoration-color: red;
+  color: black;
+}
+
+.homeLink{
+  margin-bottom: 30px;
+}
+
+.socialLogin {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+/* Style for NaverLoginButton */
+.NaverLoginButton {
+  margin-right: 10px; /* Adjust margin between buttons */
+}
+
+/* Style for KakaoLoginButton */
+.KakaoLoginButton {
+  margin-left: 10px; /* Adjust margin between buttons */
+}

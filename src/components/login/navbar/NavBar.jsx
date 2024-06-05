@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
 import styles from './css/Navbar.module.css';
+import SearchBox from '../searchbox/SearchBox';
 
 const NavBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -113,6 +114,7 @@ const NavBar = () => {
               <div className={styles.overlay_content}>
                 <NavLink to="/">Home</NavLink>
                 <NavLink to="/login">Login</NavLink>
+                <SearchBox/>
               </div>
             </div>
           </div>

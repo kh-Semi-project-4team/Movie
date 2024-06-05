@@ -1,85 +1,55 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styles from './css/BestMovie.module.css';
+import useTmdbDataPull from '../useTmdbDataPull';
+import { Link } from 'react-router-dom';
 
 function BestMovie() {
-  const [poster, setPoster] = useState(null);
+  const { popularMovies, loading } = useTmdbDataPull();
 
-  useEffect(() => {
-    const firstPosterData = () => {
-      const options = {
-        method: 'GET',
-        headers: {
-          accept: 'application/json',
-          Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1NzllZWUzZDc2ZWYwNzc2YzdjNWU4NzhlZGU0Y2ZiYSIsInN1YiI6IjY2NTQ3OWY5MjRhYWUyMmQxNDA2YWU0MCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.IroFQnlLfL2sSmvWkWAfFe8twYdSUZSoCGd_DN5V2iQ'
-        }
-      };
-      fetch('https://api.themoviedb.org/3/collection/collection_id/images', options)
-        .then(response => response.json())
-        .then(data => {
-          setPoster(data);
-        })
-        .catch(error => {
-          console.error(error);
-        });
-    };
+  const renderStars = (voteAverage) => {
+    const fullStars = Math.floor(voteAverage / 2);
+    const hasHalfStar = (voteAverage / 2) % 1 >= 0.5;
 
-    firstPosterData();
-  }, []);
+    const stars = [];
+    for (let i = 0; i < fullStars; i++) {
+      stars.push(<div key={i} className={styles.star}></div>);
+    }
+    if (hasHalfStar) {
+      stars.push(<div key="half" className={styles.halfStar}></div>);
+    }
+    return stars;
+  };
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (!popularMovies || popularMovies.length === 0) {
+    return <div>No popular movies available.</div>;
+  }
 
   return (
     <div className={styles.mainposter}>
       <header className={styles.title1}>Best Movie!</header>
       <div className={styles.image}>
-        <div className={styles.imageTd}>
-          <h3>범죄도시</h3>
-          {poster && (
-            <a href={`https://www.themoviedb.org/movie/1017163-4`}>
+        {popularMovies.slice(5, 10).map(movie => (
+          <div key={movie.id} className={styles.imageTd}>
+            <h3 className={styles.sub_title}>
+              <Link to={`/subpage/${movie.id}`} onClick={() => sessionStorage.setItem('movieId', movie.id)} className={styles.linkcus}>
+                {movie.title}
+              </Link>
+            </h3>
+            <Link to={`/subpage/${movie.id}`} onClick={() => sessionStorage.setItem('movieId', movie.id)} className={styles.linkcus}>
               <div className={styles.bestImgContainer}>
-                <img className={styles.img} src={`https://media.themoviedb.org/t/p/original/h1YarEjeYurkAwXgfY1RDMVCiin.jpg`} alt="범죄도시"/>
+                <img className={styles.img} src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt={movie.title} />
+                <div className={styles.else_container}>
+                  <div className={styles.rating}>{renderStars(movie.vote_average)}</div>
+                  <div className={styles.vote_count}>{movie.vote_count} Vote!</div>
+                </div>
               </div>
-            </a>
-          )}
-        </div>
-        <div className={styles.imageTd}>
-          <h3>혹성탈출</h3>
-          {poster && (
-            <a href={`https://www.themoviedb.org/movie/653346-kingdom-of-the-planet-of-the-apes`}>
-              <div className={styles.bestImgContainer}>
-                <img className={styles.img} src={`https://media.themoviedb.org/t/p/original/plNOSbqkSuGEK2i15A5btAXtB7t.jpg`} alt="혹성탈출"/>
-              </div>
-            </a>
-          )}
-        </div>
-        <div className={styles.imageTd}>
-          <h3>설계자</h3>
-          {poster && (
-            <a href={`https://www.themoviedb.org/movie/865910`}>
-              <div className={styles.bestImgContainer}>
-                <img className={styles.img} src={`https://media.themoviedb.org/t/p/original/qcnrlYPXMh7gLAGzloMS7tNfHi2.jpg`} alt="설계자"/>
-              </div>
-            </a>
-          )}
-        </div>
-        <div className={styles.imageTd}>
-          <h3>이프,상상의 친구</h3>
-          {poster && (
-            <a href={`https://www.themoviedb.org/movie/639720-if`}>
-              <div className={styles.bestImgContainer}>
-                <img className={styles.img} src={`https://media.themoviedb.org/t/p/original/9GAOhSzXjXJR4AxYCa2AMzMGPVg.jpg`} alt="이프, 상상의 친구"/>
-              </div>
-            </a>
-          )}
-        </div>
-        <div className={styles.imageTd}>
-          <h3>챌린저스</h3>
-          {poster && (
-            <a href={`https://www.themoviedb.org/movie/937287-challengers`}>
-              <div className={styles.bestImgContainer}>
-                <img className={styles.img} src={`https://media.themoviedb.org/t/p/original/iUDG0gsPZxNm9IOLqpIUZiUMVMZ.jpg`} alt="챌린저스"/>
-              </div>
-            </a>
-          )}
-        </div>
+            </Link>
+          </div>
+        ))}
       </div>
     </div>
   );

@@ -1,0 +1,128 @@
+/* 공동 포맷 */
+
+.mainposter {
+    width: 80%;
+    margin: 0px auto;
+    box-sizing: border-box;
+}
+
+.section_title {
+    font-family: "Monomaniac One", sans-serif;
+    display: inline-block;
+    border-radius: 30px;
+    background-color: #E6E6E6;
+    padding: 10px 2em;
+    margin-bottom: 80px;
+    font-size: 2em;
+}
+
+/* ComingSoon 고유 css */
+
+.movie_container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+.img_box {
+    display: flex;
+    width: 48%;
+    height: auto;
+    justify-content: center;
+    margin-bottom: 50px;
+    box-shadow: 0px 0px 20px black;
+    border-radius: 50px;
+}
+
+.text_box {
+    display: flex;
+    width: 42%;
+    height: auto;
+    margin-bottom: 50px;
+    border-radius: 50px;
+    box-shadow: 0px 0px 20px black;
+}
+
+.text_container {
+    display: flex;
+    width: 100%;
+    flex-flow: column nowrap;
+    padding: 30px;
+    overflow: hidden;
+    white-space: normal;
+}
+
+.img {
+    width: 100%;
+    border-radius: 50px;
+    object-fit: cover;
+    object-position: 50%;
+}
+
+.sub_title {
+    font-size: 32px;
+    margin-bottom: 5px;
+}
+
+.release_date {
+    font-size: 24px;
+    margin-bottom: 5px;
+    color: #AEAEAE;
+}
+
+.sub_content {
+    display: inline-block;
+    width: 100%;
+    font-size: 20px;
+    margin-bottom: 5px;
+    white-space: wrap;
+}
+
+.Read_More_btn {
+    position: relative;
+    font-family: "Monomaniac One", sans-serif;
+    background-color: white;
+    width: 50%;
+    display: block;
+    border: 1px solid black;
+    border-radius: 10px;
+    font-size: 20px;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.Read_More_btn:hover {
+    box-shadow: 0px 0px 5px black;
+}
+
+.sub_content {
+    font-size: 16px;
+}
+
+.sub_title {
+    font-size: 24px;
+}
+
+.release_date {
+    font-size: 24px;
+}
+
+/* 1080 이하의 해상도에서는 중앙정렬로 처리 */
+@media (max-width : 1080px) {
+    .flex_container {
+        justify-content: center;
+    }
+
+    .img_box {
+        width: 100%;
+    }
+
+    .text_box {
+        width: 100%;
+        height: auto;
+    }
+    
+}

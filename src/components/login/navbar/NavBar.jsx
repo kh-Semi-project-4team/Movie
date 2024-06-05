@@ -1,9 +1,9 @@
+
 import React, { useState, useEffect } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
 import styles from './css/Navbar.module.css';
-import btnImg from './img/btnImg.png';
-import closeImg from './img/closeImg.png';
+import SearchBox from '../searchbox/SearchBox';
 
 const NavBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -28,7 +28,7 @@ const NavBar = () => {
 
   const handleScroll = () => {
     const sections = document.querySelectorAll('section');
-    const scrollPosition = window.scrollY + 200; // Adjust based on your navbar height
+    const scrollPosition = window.scrollY + 200;
 
     sections.forEach(section => {
       const sectionTop = section.offsetTop;
@@ -62,7 +62,7 @@ const NavBar = () => {
     <nav className={`${styles.navbar} ${navBackground ? styles.navbarScrolled : ''}`}>
       <ul className={styles.navbarLinks}>
         <li onClick={handleLogoClick}> 
-          <img src='/image/logo_1.png' className={styles.logo} alt='Logo' onClick={handleLogoClick}/>
+          <img src='/image/logo.png' className={styles.logo} alt='Logo' onClick={handleLogoClick}/>
         </li>
         <li className={styles.nav_gap_none}>
           <ScrollLink
@@ -115,6 +115,7 @@ const NavBar = () => {
               <div className={styles.overlay_content}>
                 <NavLink to="/">Home</NavLink>
                 <NavLink to="/login">Login</NavLink>
+                <SearchBox/>
               </div>
             </div>
           </div>

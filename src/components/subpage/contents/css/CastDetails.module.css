@@ -1,0 +1,50 @@
+.castDetailsContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 80%;
+}
+
+.castList {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.castMember {
+  text-align: center;
+  margin: 10px;
+  width: 165px;
+}
+
+.castPhoto {
+  width: 165px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.castInfo {
+  margin-top: 10px;
+}
+
+.castName {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.castRole {
+  font-size: 14px;
+  color: gray;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.sub_title {
+  font-family: "Gamja Flower", sans-serif;
+  display: inline-block;
+  font-weight: normal;
+  padding: 10px 50px;
+  border-radius: 20px;
+  background-color: #E6E6E6;
+  margin-bottom: 50px;
+}

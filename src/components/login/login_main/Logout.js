@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { clearToken } from "../store/MemberSlice";
+import { clearToken } from "./store/MemberSlice";
 import { useNavigate } from 'react-router-dom';
 
 export default function Main() {

@@ -19,7 +19,7 @@ const KakaoLogin = () => {
     const handleKakaoLogin = () => {
         if (window.Kakao && window.Kakao.Auth) {
             window.Kakao.Auth.authorize({
-                redirectUri: 'http://localhost:3000/team4' // Replace with your redirect URI
+                redirectUri: 'http://localhost:3000' // Replace with your redirect URI
             });
         } else {
             console.error('Kakao SDK not loaded');

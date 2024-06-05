@@ -91,18 +91,7 @@ const Register = () => {
           className={styles.cellphoneNo}
         />
         <br />    
-        <select
-          value={gender}
-          onChange={(e) => setGender(e.target.value)}
-          required
-          className={styles.gender}
-        >
-          <option value="" disabled>
-            성별 선택
-          </option>
-          <option value="M">남자</option>
-          <option value="F">여자</option>
-        </select>
+     
         <br />
         <button type="submit" className={styles.btn}>
           사용자 등록하기

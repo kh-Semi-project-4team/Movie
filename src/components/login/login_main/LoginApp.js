@@ -22,7 +22,7 @@ const LoginApp = () => {
           alert('로그인 실패');
         console.log('tokken 정보 : ',response.data.token);
         dispatch(saveToken(response.data));
-        navigate('/main');
+        navigate('/');
       }
     } catch (error) {
       alert('로그인 실패');

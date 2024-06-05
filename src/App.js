@@ -7,6 +7,7 @@ import MainPage from "./components/mainpage/MainPage";
 import LoginMain from "./components/login/login_main/LoginMain";
 import Register from "./components/login/login_main/Register";
 import LoginApp from "./components/login/login_main/LoginApp";
+import Logout from "./components/login/login_main/Logout";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/login" element={<LoginMain />} />
         <Route path="/login/LoginApp" element={<LoginApp />} />
         <Route path="/login/Register" element={<Register />} /> 
+        <Route path="/login/Logout" element={<Logout />} /> 
       </Routes>
     </Provider>
   );

@@ -8,6 +8,7 @@ import VideoViewer from './contents/VideoPopupViewer'
 import NavBar from '../login/navbar/NavBar';
 import Footer from '../login/footer/Footer';
 
+
 export default function SubPage() {
   const movieId = sessionStorage.getItem('movieId') || 653346;
   const { movieData, videos } = useMovieDataPullById(movieId);
@@ -54,4 +55,7 @@ export default function SubPage() {
       <Footer />
     </div>
   );
+        {movieData && <MovieDetails movieData={movieData} videos={videos} />}
+      </div>
+    );
 }

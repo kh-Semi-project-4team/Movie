@@ -2,6 +2,12 @@
   max-width: 1200px;
   margin: 0 auto;
   width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .castList {
@@ -18,6 +24,17 @@
 
 .castPhoto {
   width: 165px;
+  gap: 20px;
+  flex-wrap: nowrap;
+}
+
+.castMember {
+  text-align: left;
+  width: 185px;
+}
+
+.castPhoto {
+  width: 185px;
   height: auto;
   border-radius: 10px;
 }

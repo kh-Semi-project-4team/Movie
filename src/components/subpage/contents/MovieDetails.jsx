@@ -5,7 +5,7 @@ const MovieDetails = ({ movieData, videos, onVideoClick }) => {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.sub_title}>Overview</h1>
+      <h1 className={styles.sub_title}>소개</h1>
 
       <div className={styles.details}>
 

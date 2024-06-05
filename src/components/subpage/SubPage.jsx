@@ -3,9 +3,9 @@ import HeaderImage from './header/HeaderImage';
 import MovieDetails from './contents/MovieDetails';
 import useMovieDataPullById from './useMovieDataPullById';
 import CastDetails from './contents/CastDetails';
-import DisqusComments from './review/DisqusComment';
-import VideoViewer from './contents/VideoPopupViewer';
 import SubNavBar from './subnavbar/SubpageNavBar';
+import DisqusComments from './review/DisqusComment';
+import VideoViewer from './contents/VideoPopupViewer'
 
 export default function SubPage() {
   const movieId = sessionStorage.getItem('movieId') || 653346;
@@ -34,6 +34,8 @@ export default function SubPage() {
       <div style={{ height: "100px" }} />
       <DisqusComments url={pageUrl} identifier={pageIdentifier} />
       <VideoViewer videoUrl={videoUrl} onClose={handleCloseVideo} />
+      <div style={{ height: "100px" }}/>
+      <DisqusComments />
     </div>
   );
 }

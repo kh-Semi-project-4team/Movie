@@ -12,7 +12,6 @@
 }
 
 .genreButtons button {
-  /* padding: 10px 20px; */
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -36,6 +35,11 @@
 .kategorieImg {
   width: 300px; 
   height: 90%;
+  box-shadow: 0px 0px 20px black;
+}
+
+.kategorieImg:hover {
+  transform: scale(1.1);
 }
 
 .kategorieContainer{
@@ -44,6 +48,8 @@
 
 .sub_title {
   margin-top: 10px;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .kategorieTitle {

@@ -8,7 +8,7 @@ export default function ComingSoonMovie() {
 
   return (
     <div className={styles.mainposter}>
-      <header className={styles.section_title}>개봉예정</header>
+      <header className={styles.section_title}>개봉예정영화</header>
       <div className={styles.flex_container}>
         {comingSoonMovies.map((movie, index) => (
           <div key={movie.id} className={styles.movie_container}>

@@ -8,7 +8,7 @@ const HeaderImage = ({ movieId }) => {
 
   useEffect(() => {
     if (backdropImages && backdropImages.length > 0) {
-      setBackdropImg(backdropImages[0]);
+      setBackdropImg(backdropImages[1]);
     }
   }, [backdropImages]);
 

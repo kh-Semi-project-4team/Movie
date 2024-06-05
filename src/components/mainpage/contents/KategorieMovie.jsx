@@ -20,7 +20,7 @@ export default function KategorieMovie() {
       .then(response => response.json())
       .then(data => {
         const selectedGenres = data.genres.filter(genre =>
-          ['공포', '애니메이션', '로맨스', '모험'].includes(genre.name)
+          ['액션', '공포' , '드라마', '모험'].includes(genre.name)
         );
         setGenres(selectedGenres);
       })
@@ -31,7 +31,7 @@ export default function KategorieMovie() {
     fetch('https://api.themoviedb.org/3/movie/now_playing?language=ko-KR', options)
       .then(response => response.json())
       .then(data => {
-        setMovies(data.results.slice(0, 15)); 
+        setMovies(data.results.slice(0, 16)); 
       })
       .catch(err => console.error(err));
   }, []);
@@ -51,10 +51,10 @@ export default function KategorieMovie() {
           <button key={genre.id} onClick={() => handleGenreClick(genre.id)}>{genre.name}</button>
         ))}
       </div>
-      <div className={styles.category}>
+      <div className={styles.category}> 
         <ul>
           {filteredMovies.map(movie => (
-            <li key={movie.id}>
+            <li key={movie.id} className={styles.kategorieContainer}>
               <Link to={`/subpage/${movie.id}`}>
                 <img className={styles.kategorieImg} src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt={movie.title} />
               </Link>

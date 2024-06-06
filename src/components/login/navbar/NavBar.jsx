@@ -1,7 +1,7 @@
-
 import React, { useState, useEffect } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
-import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
+import { Link as ScrollLink } from 'react-scroll';
+import { useSelector } from 'react-redux'; // Import useSelector
 import styles from './css/Navbar.module.css';
 import SearchBox from '../searchbox/SearchBox';
 
@@ -11,6 +11,10 @@ const NavBar = ({ title, sections }) => {
   const [navBackground, setNavBackground] = useState(false);
   const [activeSection, setActiveSection] = useState('');
   const navigate = useNavigate();
+
+  // Get user info from Redux store
+  const userInfo = useSelector(state => state.member.value);
+  const { id, token } = userInfo;
 
   const openNav = () => {
     document.getElementById("myNav").classList.toggle(styles.menu_width);
@@ -59,6 +63,14 @@ const NavBar = ({ title, sections }) => {
     };
   }, []);
 
+  const handleLogout = () => {
+    // Implement your logout logic here, e.g., clearing local storage, etc.
+    // For now, let's assume clearing local storage to log out
+    localStorage.removeItem('token');
+    localStorage.removeItem('id');
+    navigate('/');
+  };
+
   return (
     <nav className={`${styles.navbar} ${navBackground ? styles.navbarScrolled : ''}`}>
       <ul className={styles.navbarLinks}>
@@ -87,14 +99,20 @@ const NavBar = ({ title, sections }) => {
             <div id="myNav" className={styles.overlay}>
               <div className={styles.overlay_content}>
                 <NavLink to="/">Home</NavLink>
-                <NavLink to="/login">Login</NavLink>
+                {token ? ( // Display username if logged in
+                  <>
+                    <NavLink to="/login/Main">{id}님</NavLink>
+                    <button onClick={handleLogout}>Logout</button>
+                  </>
+                ) : (
+                  <>
+                    <NavLink to="/login">Login</NavLink>
+                  </>
+                )}
                 <SearchBox/>
               </div>
             </div>
           </div>
-        </li>
-        <li className={styles.mobile}>
-          ---님{/* session에 로그인정보가 있으면 표시 없으면 로그인 창으로 이동*/}
         </li>
       </ul>
     </nav>

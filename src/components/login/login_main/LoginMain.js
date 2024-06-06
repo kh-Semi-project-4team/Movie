@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import styles from './css/Animation.module.css'; // Import as a CSS module
 import Logo_1 from './img/Logo_1.png';
 import Home from './Home';
-import Footer from '../footer/Footer';
 
 const LoginMain = () => {
   const [isOpen, setIsOpen] = useState(false);

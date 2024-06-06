@@ -1,7 +1,7 @@
-
 import React, { useState, useEffect } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
-import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
+import { Link as ScrollLink } from 'react-scroll';
+import { useSelector } from 'react-redux';
 import styles from './css/Navbar.module.css';
 import SearchBox from '../searchbox/SearchBox';
 
@@ -11,6 +11,8 @@ const NavBar = ({ title, sections }) => {
   const [navBackground, setNavBackground] = useState(false);
   const [activeSection, setActiveSection] = useState('');
   const navigate = useNavigate();
+
+  const username = useSelector(state => state.member.value.username);
 
   const openNav = () => {
     document.getElementById("myNav").classList.toggle(styles.menu_width);
@@ -94,7 +96,7 @@ const NavBar = ({ title, sections }) => {
           </div>
         </li>
         <li className={styles.mobile}>
-          ---님{/* session에 로그인정보가 있으면 표시 없으면 로그인 창으로 이동*/}
+          {username ? `${username}님` : <NavLink to="/login">Login</NavLink>}
         </li>
       </ul>
     </nav>

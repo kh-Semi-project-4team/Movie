@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import NaverLoginButton from './../button/NaverLoginButton';
 import KakaoLoginButton from './../button/KakaoLoginButton';
 import styles from './css/Home.module.css';
-import Footer from '../footer/Footer';
 
 const Home = () => {
     return (

@@ -8,7 +8,7 @@ const NaverLoginCallback = () => {
     const { naver } = window;
     const naverLogin = new naver.LoginWithNaverId({
       clientId: 'DV7Jw_pPlhIl8zfw4nRn',
-      callbackUrl: 'http://localhost:3000/naver/callback',
+      callbackUrl: 'http://teeput.synology.me:40215/naver/callback',
       isPopup: false,
       loginButton: { color: 'green', type: 3, height: 40 },
     });

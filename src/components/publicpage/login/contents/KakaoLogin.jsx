@@ -16,7 +16,7 @@ const KakaoLogin = () => {
     console.log('Kakao:', Kakao);
 
     Kakao.Auth.authorize({
-      redirectUri: 'http://localhost:3000/kakao/callback',
+      redirectUri: 'http://teeput.synology.me:40215/kakao/callback',
     });
   }, [navigate]);
 

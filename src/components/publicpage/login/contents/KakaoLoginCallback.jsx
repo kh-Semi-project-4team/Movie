@@ -22,7 +22,7 @@ const KakaoLoginCallback = () => {
       axios.post('https://kauth.kakao.com/oauth/token', new URLSearchParams({
         grant_type: 'authorization_code',
         client_id: '57b7f556c63c4dedc0c4ddc2d5d62a25',
-        redirect_uri: 'http://localhost:3000/kakao/callback',
+        redirect_uri: 'http://teeput.synology.me:40215/kakao/callback',
         code: code,
       }), {
         headers: {

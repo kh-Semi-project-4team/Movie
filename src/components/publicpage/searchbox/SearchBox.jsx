@@ -9,7 +9,7 @@ const SearchBox = () => {
 
   const handleInputChange = (e) => {
     setQuery(e.target.value);
-    setSearchAttempted(false); // Reset search state when input changes
+    setSearchAttempted(false); // 검색어 입력값 상태가 바뀔 때 검색 상태 리셋
   };
 
   const handleSearch = () => {
@@ -17,7 +17,7 @@ const SearchBox = () => {
     if (query.trim()) {
       fetchMovies(query);
     } else {
-      setResults([]); // Clear results when no search keyword
+      setResults([]); // 검색어 입력값이 없을 때 검색 결과 클리어
     }
   };
 
@@ -27,7 +27,7 @@ const SearchBox = () => {
       if (query.trim()) {
         fetchMovies(query);
       } else {
-        setResults([]); // Clear results when no search keyword
+        setResults([]); // 검색어 입력값이 없을 때 검색 결과 클리어
       }
     }
   };
@@ -44,7 +44,7 @@ const SearchBox = () => {
     fetch(`https://api.themoviedb.org/3/search/movie?query=${encodeURIComponent(searchQuery)}&include_adult=false&language=ko-KR&page=1`, options)
       .then(response => response.json())
       .then(data => {
-        setResults(data.results.slice(0, 3)); // Get only the first three results
+        setResults(data.results.slice(0, 3)); // 첫 세 건의 검색 결과만 가져오기
       })
       .catch(err => console.error(err));
   };

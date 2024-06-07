@@ -45,18 +45,6 @@
     z-index: 2;
 }
 
-@media (max-width:600px) {
-    img {
-        margin: 0px auto;
-        object-fit: cover;
-        height: 800px;
-        width: 100%;
-        object-position: calc(70%-0px) -50px;
-    }   
-    body {
-        overflow-y: hidden;
-    }
-}
 
 
 /* custom-slick.css */
@@ -81,7 +69,7 @@
 }
 
 .slick-next {
-    left: 20%; /* 왼쪽에 위치 */
+    left: 25%; /* 왼쪽에 위치 */
     background-image: url(../image/right.png) !important;
 }
 
@@ -104,7 +92,7 @@
 }
 
 .slick-next:hover {
-    left: 20%; /* 왼쪽에 위치 */
+    left: 25%; /* 왼쪽에 위치 */
     background-image: url(../image/right.png) !important;
 }
 
@@ -127,10 +115,10 @@
 }
 
 .slick-next:focus {
-    left: 20%; /* 왼쪽에 위치 */
+    left: 25%; /* 왼쪽에 위치 */
     background-image: url(../image/right.png) !important;
 }
 
 .slick-prev::before, .slick-next::before {
-    display: none; /* 의사 요소의 콘텐츠를 완전히 제거 */
+    display: none;
 }

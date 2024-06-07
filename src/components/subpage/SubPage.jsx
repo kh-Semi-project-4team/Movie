@@ -5,8 +5,8 @@ import useMovieDataPullById from './useMovieDataPullById';
 import CastDetails from './contents/CastDetails';
 import DisqusComments from './review/DisqusComment';
 import VideoViewer from './contents/VideoPopupViewer'
-import NavBar from '../login/navbar/NavBar';
-import Footer from '../login/footer/Footer';
+import NavBar from '../publicpage/navbar/NavBar';
+import Footer from '../publicpage/footer/Footer';
 
 export default function SubPage() {
   const movieId = sessionStorage.getItem('movieId') || 653346;

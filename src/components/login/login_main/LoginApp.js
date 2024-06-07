@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useDispatch } from "react-redux";
 import { useNavigate } from 'react-router-dom';
-import styles from './css/LoginApp.module.css'; // Import CSS module styles
+import styles from './css/LoginApp.module.css';
 import { saveToken } from './store/MemberSlice';
 
 const LoginApp = () => {
@@ -14,15 +14,18 @@ const LoginApp = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post('http://nam3324.synology.me:32845/member/login', { id : id, pwd : password });
+      const response = await axios.post('http://nam3324.synology.me:32845/member/login', { id, pwd: password });
       if (response.status === 200) {
-        if(response.data.flag)
+        if (response.data.flag) {
           alert('로그인 성공');
-        else
+          dispatch(saveToken({
+            token: response.data.token,
+            username: response.data.username // 서버에서 반환된 사용자 이름
+          }));
+          navigate('/');
+        } else {
           alert('로그인 실패');
-        console.log('tokken 정보 : ',response.data.token);
-        dispatch(saveToken(response.data));
-        navigate('/');
+        }
       }
     } catch (error) {
       alert('로그인 실패');
@@ -31,7 +34,7 @@ const LoginApp = () => {
   };
 
   return (
-    <div className={styles["login-box"]}> {/* Apply CSS module class */}
+    <div className={styles["login-box"]}>
       <h2>로그인 페이지</h2>
       <form onSubmit={handleSubmit}>
         <div className={styles["user-box"]}>

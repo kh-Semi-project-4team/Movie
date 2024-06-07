@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import App from './App';
-import { store, persistor } from './components/login/login_main/store/store';
+import { store, persistor } from './components/publicpage/login/contents/store/store';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

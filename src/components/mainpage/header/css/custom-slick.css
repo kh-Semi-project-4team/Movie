@@ -69,23 +69,8 @@
 }
 
 .slick-next {
-    left: 20%; /* 왼쪽에 위치 */
+    left: 25%; /* 왼쪽에 위치 */
     background-image: url(../image/right.png) !important;
-}
-
-@media (max-width: 425px) {
-    .slick-next {
-        left: 30%;
-    }
-    .slick-next:hover {
-        left: 30%; /* 왼쪽에 위치 */
-    }
-    .slick-next:focus {
-        left: 30%; /* 왼쪽에 위치 */
-    }
-    .slick-next::before {
-        left: 30%;
-    }
 }
 
 .slick-prev:hover, .slick-next:hover {
@@ -107,7 +92,7 @@
 }
 
 .slick-next:hover {
-    left: 20%; /* 왼쪽에 위치 */
+    left: 25%; /* 왼쪽에 위치 */
     background-image: url(../image/right.png) !important;
 }
 
@@ -130,7 +115,7 @@
 }
 
 .slick-next:focus {
-    left: 20%; /* 왼쪽에 위치 */
+    left: 25%; /* 왼쪽에 위치 */
     background-image: url(../image/right.png) !important;
 }
 

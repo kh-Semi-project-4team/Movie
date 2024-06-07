@@ -23,7 +23,7 @@ const Register = ({ onComponentChange }) => {
         userEmail: email,
         userPhone: phone,
         userNickName: userNick,
-        userGender: gender
+        // userGender: gender
       });
       alert('회원가입 성공');
       navigate('/login');

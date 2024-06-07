@@ -15,7 +15,11 @@ const CastDetails = ({ movieId }) => {
         {castDetails.map(member => (
           <div key={member.id} className={styles.castMember}>
             {member.profile_path && (
-              <img src={`https://image.tmdb.org/t/p/w185${member.profile_path}`} alt={member.name} className={styles.castPhoto} />
+              <img
+                src={`https://image.tmdb.org/t/p/w185${member.profile_path}`}
+                alt={member.name}
+                className={styles.castPhoto}
+              />
             )}
             <div className={styles.castInfo}>
               <p className={styles.castName}>{member.name}</p>

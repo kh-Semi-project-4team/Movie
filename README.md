@@ -1,4 +1,4 @@
-![image](https://github.com/kh-Semi-project-4team/Movie/assets/129711481/089751c5-d5d5-44b6-adb1-e3bb03964a50)<h1>📌 Intro</h1><br>
+<h1>📌 Intro</h1><br>
 
 이 프로젝트는 리액트로 진행한 팀 세미 프로젝트입니다.<br><br>
 

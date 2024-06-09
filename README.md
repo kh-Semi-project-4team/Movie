@@ -184,7 +184,7 @@ kakaoLogin과 NaverLogin은 API를 가져와서 ajax로 호출 입력한 데이�
 로그인 페이지의 경우 메뉴를 심플하게 구현했고 자바스크립트로 애니메이션도 많이 넣었습니다 <br><br>
 
 
-<h1>📌 deploy </h1><br>
+<h1>📌 Deploy </h1><br>
 
 PM의 시놀로지 나스 서버를 사용하여 Github에 push 작업이 올라오면 자동으로 webHook 하여 빌드 테스트 및 여러 테스트 합니다 <br><br>
 

@@ -48,6 +48,7 @@ const MovieDetails = ({ movieData, videos, onVideoClick }) => {
                     width="35"
                     height="35"
                     alt="현재 상영 중"
+                    className={styles.gif_img}
                   />
                   <button onClick={handlePopupOpen} className={styles.rankLink}>
                     <strong>{typewriterText}</strong>

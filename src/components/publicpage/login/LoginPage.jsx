@@ -15,7 +15,7 @@ function LoginPage() {
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '900px' }}>
       <NavBar />
       <div style={{ flex: '1' }}>
         <div style={{ height: "100px" }} />

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate, Link } from 'react-router-dom';
 import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
 import styles from './css/Navbar.module.css';
 import SearchBox from '../searchbox/SearchBox';
@@ -111,7 +111,7 @@ const NavBar = ({ title, sections = [] }) => {
           </div>
         </li>
         <li className={styles.mobile}>
-          {username ? `${username}님` : '로그인'}
+          {username ? `${username}님` : <Link to="/login">로그인</Link>}
         </li>
       </ul>
     </nav>

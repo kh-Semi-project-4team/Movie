@@ -113,7 +113,7 @@
   height: 100vh; 
 }
 
-@media (max-device-height: 650px) {
+@media (max-device-height: 719px) {
   .progressContainer {
       display: none;
   }

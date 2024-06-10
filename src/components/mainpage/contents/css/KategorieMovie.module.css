@@ -79,11 +79,6 @@
   flex-flow: column nowrap;
 }
 
-.kategorieContainer {
-  display: flex;
-  flex-flow: column nowrap;
-}
-
 .kategorieTitle {
   font-family: "Gamja Flower", sans-serif;
   font-weight: normal;

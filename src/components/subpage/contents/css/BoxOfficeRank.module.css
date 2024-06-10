@@ -1,0 +1,139 @@
+/* BoxOfficeRank.module.css */
+
+.boxOfficePopupOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.boxOfficePopupContent {
+  background: rgba(51, 51, 51, 0.9);
+  border-radius: 10px;
+  width: 80%;
+  max-width: 600px;
+  position: relative;
+}
+
+.boxOfficeCloseButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #ff5c5c;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.boxOfficeCloseButton:hover {
+  background: #ff1c1c;
+}
+
+.boxOfficeTableTitle h1 {
+  font-size: 30px;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.boxOfficeDateTitle {
+  font-size: 16px;
+  color: #fff;
+  text-align: left;
+  margin-left: 10px;
+  margin-bottom: 5px;
+}
+
+table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse; /* Add this line to remove the gap between borders */
+}
+
+.boxOfficeTblHeader {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.boxOfficeTblContent {
+  height: 300px;
+  overflow-x: auto;
+  margin-top: 0px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+th {
+  padding: 20px 15px;
+  text-align: center; /* Center-align column headers */
+  font-weight: 500;
+  font-size: 12px;
+  color: #fff;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Only bottom border */
+}
+
+td {
+  padding: 15px;
+  text-align: left;
+  vertical-align: middle;
+  font-weight: 300;
+  font-size: 12px;
+  color: #fff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Only bottom border */
+}
+
+.rankColumn {
+  width: 5%;
+}
+
+.movieNmColumn {
+  width: 35%;
+}
+
+.highlight {
+  background-color: rgba(255, 92, 92, 0.8); /* Highlighted row background color */
+}
+
+/* Custom scrollbar for webkit browsers */
+
+.boxOfficeTblContent::-webkit-scrollbar {
+  width: 6px;
+}
+
+.boxOfficeTblContent::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.boxOfficeTblContent::-webkit-scrollbar-thumb {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+/* New styles for buttons to look like links */
+.movieTitleButton {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+.rankLink {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font-size: inherit;
+  text-decoration: underline;
+}
+

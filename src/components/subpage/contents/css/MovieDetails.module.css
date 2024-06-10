@@ -8,7 +8,6 @@
   width: 80%;
 }
 
-
 .details {
   display: flex;
   flex-flow: row wrap;
@@ -33,7 +32,7 @@
 .titleContainer {
   display: flex;
   flex-flow: row nowrap;
-  align-items: baseline;
+  align-items: flex-end;
 }
 
 .localTitle {
@@ -53,6 +52,23 @@
   color: #888;
 }
 
+.gifContainer {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.rankLink {
+  color: inherit;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.rankLink:hover {
+  text-decoration: none;
+  text-shadow: 0px 0px 3px red;
+}
+
 .originalTitle {
   font-size: 24px;
   color: #888;
@@ -65,6 +81,8 @@
 }
 
 .buttons {
+  display: flex;
+  align-items: center;
   margin-top: 20px;
 }
 
@@ -78,13 +96,14 @@
   border-radius: 15px;
   cursor: pointer;
   transition: background-color 0.3s, box-shadow 0.3s;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1)
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .buttons button:hover {
   background-color: #f0f0f0;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
+
 
 .sub_title {
   font-family: "Gamja Flower", sans-serif;
@@ -103,6 +122,7 @@
   }
   .titleContainer {
     flex-flow: column nowrap;
+    align-items: flex-start;
   }
   .localTitle {
     font-size: 25px;

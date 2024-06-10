@@ -32,6 +32,7 @@ function LoginPage() {
           <Login onComponentChange={handleComponentChange} />
         )}
       </div>
+      <div style={{ height: "50px" }} />
       <Footer />
     </div>
   );

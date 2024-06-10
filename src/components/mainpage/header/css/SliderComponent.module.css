@@ -112,3 +112,9 @@
 .slide {
   height: 100vh; 
 }
+
+@media (max-device-height: 650px) {
+  .progressContainer {
+      display: none;
+  }
+}

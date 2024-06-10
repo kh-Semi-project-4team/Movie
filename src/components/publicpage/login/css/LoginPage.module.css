@@ -1,0 +1,14 @@
+/* LoginPage.module.css */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  @media (max-device-height: 830px) {
+    .container {
+      min-height: 900px;
+    }
+  }
+  

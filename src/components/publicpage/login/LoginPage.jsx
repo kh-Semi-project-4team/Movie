@@ -6,6 +6,7 @@ import Register from './contents/Register';
 import Login from './contents/Login';
 import KakaoLogin from './contents/KakaoLogin';
 import NaverLogin from './contents/NaverLogin';
+import styles from './css/LoginPage.module.css'; // 추가: CSS 파일을 import 합니다.
 
 function LoginPage() {
   const [activeComponent, setActiveComponent] = useState('login');
@@ -15,7 +16,7 @@ function LoginPage() {
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '900px' }}>
+    <div className={styles.container}> {/* 스타일 객체 대신 CSS 클래스를 사용합니다. */}
       <NavBar />
       <div style={{ flex: '1' }}>
         <div style={{ height: "100px" }} />

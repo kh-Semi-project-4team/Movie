@@ -95,8 +95,8 @@ const Register = ({ onComponentChange }) => {
         <button type="submit" className={styles.btn}>
           사용자 등록하기
         </button>
-      </form>
       <button onClick={() => onComponentChange('login')} className={styles.back_btn}>뒤로가기</button>
+      </form>
     </div>
   );
 };

@@ -12,3 +12,9 @@
   object-position: 0px -50px;
   }
 }
+
+@media (max-width: 900px) {
+  .headerImage {
+    object-position: 50%;
+  }
+}

@@ -21,7 +21,7 @@ const SearchBox = () => {
     }
   };
 
-  const handleKeyPress = (e) => {
+  const handleKeyDown = (e) => {
     if (e.key === 'Enter') {
       setSearchAttempted(true);
       if (query.trim()) {
@@ -62,7 +62,7 @@ const SearchBox = () => {
           placeholder="제목 검색"
           value={query}
           onChange={handleInputChange}
-          onKeyPress={handleKeyPress}
+          onKeyDown={handleKeyDown}
         />
         <a className={styles.searchBtn} href="#" onClick={handleSearch}>
           <i className="fas fa-search"></i>

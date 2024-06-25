@@ -18,7 +18,8 @@ Tmdb에서 제공하는 데이터가 정말 잘 만들어져 있어, 이미지�
 >1. 메인페이지 슬라이더 구현 **PM 이재민**
 >2. 메인페이지 컨텐츠 구현 **이종혁**
 >3. 서브페이지 구현 **이현아**
->4. 로그인 페이지 및 네비게이션 푸터 구현 **엄장원** 
+>4. 로그인 페이지 및 네비게이션 푸터 구현 **엄장원**
+
 
 GitHub 브랜치를 나누어 체크포인트로 사용하고, 이후 PM이 merge하여 메인 컴포넌트에 병합하는 방식으로 작업을 진행했습니다. <br><br>
 
@@ -80,11 +81,24 @@ fetch('https://api.themoviedb.org/3/movie/now_playing?language=ko-KR', options)
 ```
 
 슬라이더 구현 부분입니다<br>
+
+<div align="center">
+  <img src="https://github.com/kh-Semi-project-4team/Movie/assets/129711481/b10aa919-b773-4a7d-9037-c1269c3461ec" alt="메인 헤더" width="700"/>
+  <p>메인 슬라이더</p>
+</div>
+
 React-slick 라이브러리를 사용하여 슬라이더를 구현했습니다 setting 변수로 편하게 구현할 수 있었습니다<br><br>
 
 타이핑 애니메이션 구현은 위에서 말한 useTmdbDataPull 컴포넌트에서 데이터를 받으면 우선 전체 글을 hidden 시키고 하나씩 보이도록 하여 타이핑 하는 효과를 냈습니다 <br><br>
 
 메인페이지 컨텐츠 부분입니다 <br><br>
+
+<div align="center">
+  <img src="https://github.com/kh-Semi-project-4team/Movie/assets/129711481/ab64af11-9d9b-438a-be9c-2bc9f5290223" alt="메인 헤더" width="700"/>
+  <p>인기영화 Section</p>
+</div>
+
+
 
 전체적인 메인페이지 컨텐츠 부분은 flex를 사용하여 구현했고 반응형으로 디바이스 해상도에 맞춰서 컨텐츠 부분이 이동하도록 wrap을 적극 활용하였습니다 <br><br>
 
@@ -97,6 +111,10 @@ React-slick 라이브러리를 사용하여 슬라이더를 구현했습니다 s
 ```
 
 <h3>서브페이지</h3>
+<div align="center">
+  <img src="https://github.com/kh-Semi-project-4team/Movie/assets/129711481/97bc2317-fff1-428b-b53c-e3c2e4897551" alt="메인 헤더" width="700"/>
+  <p>서브페이지</p>
+</div>
 
 메인페이지에서 vh로 화면 꽉차게 슬라이더를 구현했습니다 이후 서브페이지 header를 메인페이지처럼 화면 꽉차게 구현해버리면 <br><br>
 
@@ -113,7 +131,13 @@ React-slick 라이브러리를 사용하여 슬라이더를 구현했습니다 s
 
 사용자 편의성을 위해 X버튼 이외에도 팝업 영역을 제외한 화면 어디를 누르더라도 팝업을 닫을 수 있도록 설정했습니다. <br><br>
 
-댓글 부분입니다 disqus가 여러 부분에서 잡다한 게 많아서 remark42 로 이 문제를 해결해보려고 하였습니다 <br><br>
+<h3>리뷰</h3>
+<div align="center">
+  <img src="https://github.com/kh-Semi-project-4team/Movie/assets/129711481/4e842618-8d5d-4ba4-82d7-7c06a8b80934" alt="메인 헤더" width="700"/>
+  <p>리뷰</p>
+</div>
+
+disqus가 여러 부분에서 잡다한 게 많아서 remark42 로 이 문제를 해결해보려고 하였습니다 <br><br>
 
 remark42는 docker 컨테이너로 개별적인 댓글 기능을 구현할 수 있도록 하는 솔루션입니다 <br><br>
 
@@ -148,6 +172,10 @@ const DisqusComments = ({ url, identifier }) => {
 ```
 
 <h3>네비게이션</h3>
+<div align="center">
+  <img src="https://github.com/kh-Semi-project-4team/Movie/assets/129711481/def6b86d-16ef-425f-ba10-2ba88dcaee4d" alt="메인 헤더" width="400"/>
+  <p>네비게이션</p>
+</div>
 
 네비게이션의 경우 오른쪽 상단에 전체 메뉴를 볼 수 있는 기능과 클릭하면 해당하는 section으로 이동하는 기능으로 만들었습니다 <br><br>
 
@@ -161,8 +189,11 @@ setion이랑 id가 없는 경우 로고와 전체 메뉴만 flex로 띄워지도
 모바일의 경우 클릭 시 이동하는 메뉴가 많아지면 font-size를 엄청 작게 만들어야 하는 이유도 있고 <br>
 조잡해 보일 것 같아 어느정도의 해상도를 넘어가면 클릭 시 이동하는 네비게이션은 display:none 했습니다 <br><br>
 
-마이페이지의 메뉴입니다 <br><br>
-
+<h3>마이페이지, 박스오피스</h3>
+<div align="center">
+  <img src="https://github.com/kh-Semi-project-4team/Movie/assets/129711481/39fed2af-fb6b-4f12-8a01-a5cf5b6e02ca" alt="메인 헤더" width="700"/>
+  <p>마이페이지</p>
+</div>
 서브페이지는 메인페이지에서 session에 movieId를 받고 이동하는 페이지이기 때문에 서브페이지로 직접 이동하는 메뉴는 구현하지 않고 로그인 페이지와 메인페이지로 이동하는 버튼만 구현했습니다.<br><br>
 
 대신 search box를 이곳에 배치하여, 사용자가 찾는 특정 영화의 서브페이지와의 연결을 제공함으로써 사이트의 목적에 부합하는 기본 기능을 보강했습니다. <br><br>
@@ -170,18 +201,23 @@ setion이랑 id가 없는 경우 로고와 전체 메뉴만 flex로 띄워지도
 searchBox의 경우 검색 할 때 입력한 movieTitle의 일치하는 영화 3개까지만 가져와 간단한 리스트 형식으로 출력하며 <br>
 검색어 입력값 상태가 바뀔 때 마다 그리고 검색어 입력값이 없을 때 모두 예외처리 하여 구현했습니다 <br><br>
 
-![image](https://github.com/kh-Semi-project-4team/Movie/assets/129711481/6e25f244-f7a2-4a99-808e-32e1ed1904e8)
+한국 박스오피스 10위에 포함된 영화가 검색되면, 서브페이지의 영화 제목 오른쪽 부분에 타이핑 애니메이션과 함께 링크가 생성됩니다 <br><br>
+
+해당 링크를 클릭하면 한국 박스오피스 내용을 출력합니다 <br><br>
 
 <h3>로그인 페이지</h3>
+
+<div align="center">
+  <img src="https://github.com/kh-Semi-project-4team/Movie/assets/129711481/11c8498c-eb95-4ac9-a6f6-64ddc67735d8" alt="메인 헤더" width="700"/>
+  <p>로그인</p>
+</div>
 
 기본적으로 만든 로그인 페이지는 node js express 서버로 백엔드를 구현한 것이며 강사님이 제공해주셨습니다 <br><br>
 
 kakaoLogin과 NaverLogin은 API를 가져와서 ajax로 호출 입력한 데이터에 맞춰서 로그인 데이터를 받아 session으로 네비게이션 컴포넌트에 전달 <br>
 이 후 로그인을 로그아웃을 바꾸고 모바일의 경우 닉네임을 표시하도록 구현했습니다 <br><br>
 
-![image](https://github.com/kh-Semi-project-4team/Movie/assets/129711481/fba5ae88-698a-46df-b95f-26a7bb6bbfab)
-
-로그인 페이지의 경우 메뉴를 심플하게 구현했고 자바스크립트로 애니메이션도 많이 넣었습니다 <br><br>
+로그인 페이지의 경우 메뉴를 심플하게 구현했고, 자바스크립트로 애니메이션을 구현했습니다 <br><br>
 
 
 <h1>📌 Deploy </h1><br>

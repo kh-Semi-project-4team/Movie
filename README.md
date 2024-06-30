@@ -64,8 +64,9 @@ npm install
 
 초기 프로토타입은 피그마로 작성하였습니다
 
-    [![image](https://github.com/kh-Semi-project-4team/Movie/assets/129711481/9ae75eba-80ca-44bd-8254-435d777f7879)](https://www.figma.com/design/LiW2vmTgXMoNPB5FbTt5fq/4team?node-id=0-1&t=xPf6tY7ovEIzjCXR-1)
-    <p></p>
+[![image](https://github.com/kh-Semi-project-4team/Movie/assets/129711481/9ae75eba-80ca-44bd-8254-435d777f7879)](https://www.figma.com/design/LiW2vmTgXMoNPB5FbTt5fq/4team?node-id=0-1&t=xPf6tY7ovEIzjCXR-1)
+<p>클릭 시 피그마로 이동합니다</p>
+
 이 후 로직은 구현하면서 조금씩 수정하였습니다
 
 <h3>메인페이지</h3>
